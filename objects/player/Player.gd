@@ -22,7 +22,7 @@ func _physics_process(delta):
 	if can_jump and Input.is_joy_button_pressed(id, JOY_BUTTON_A) and $FloorCheck.is_colliding():
 		$RigidBody3D.apply_central_impulse(Vector3(0, 1, 0) * jumping_force)
 	
-	$HamsterParent.global_transform.origin = $RigidBody3D.global_transform.origin
+	$HamsterParent.global_transform.origin = $RigidBody3D.global_transform.origin + (Vector3.DOWN * 0.25)
 	
 	
 	var target_rotation = atan2(-Input.get_joy_axis(id, JOY_AXIS_LEFT_X), -Input.get_joy_axis(id, JOY_AXIS_LEFT_Y))  # Get angle in radians
