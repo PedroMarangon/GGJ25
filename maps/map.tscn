@@ -1,0 +1,60 @@
+[gd_scene load_steps=4 format=3 uid="uid://b6ihhbt2rufpe"]
+
+[ext_resource type="PackedScene" uid="uid://c60aggx6hfjrb" path="res://objects/player.tscn" id="1_ak00w"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_coebl"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_fabxn"]
+
+[node name="Map" type="Node3D"]
+
+[node name="Floor" type="MeshInstance3D" parent="."]
+transform = Transform3D(20.9342, 0, -3.16097e-06, 0, -0.210746, 0, 3.16097e-06, 0, 20.9342, 0, 0, 0.708752)
+mesh = SubResource("CylinderMesh_coebl")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Floor"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/StaticBody3D"]
+shape = SubResource("CylinderShape3D_fabxn")
+
+[node name="Player" parent="." instance=ExtResource("1_ak00w")]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-1, 5.96222e-08, -6.3937e-08, 0, 0.731354, 0.681998, 8.74228e-08, 0.681998, -0.731354, -0.0216932, 14.6439, -14.4789)
+projection = 1
+fov = 79.9198
+size = 16.238
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 15.6929, 13.7691, -8.48451)
+shadow_enabled = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="BpPlayer1" type="Label" parent="CanvasLayer"]
+offset_left = 18.0
+offset_top = 15.0
+offset_right = 209.0
+offset_bottom = 38.0
+text = "Bubble points player 1: 0"
+
+[node name="BpPlayer2" type="Label" parent="CanvasLayer"]
+offset_left = 936.455
+offset_top = 15.0
+offset_right = 1127.46
+offset_bottom = 38.0
+text = "Bubble points player 2: 0"
+
+[node name="BpPlayer3" type="Label" parent="CanvasLayer"]
+offset_left = 18.0
+offset_top = 605.295
+offset_right = 209.0
+offset_bottom = 628.295
+text = "Bubble points player 3: 0"
+
+[node name="BpPlayer4" type="Label" parent="CanvasLayer"]
+offset_left = 936.46
+offset_top = 605.295
+offset_right = 1127.46
+offset_bottom = 628.295
+text = "Bubble points player 4: 0"
