@@ -59,3 +59,9 @@ func update_ui():
 	p2_label.text = "Player 2 Bubbles: %s" % player2_bubbles
 	p3_label.text = "Player 3 Bubbles: %s" % player3_bubbles
 	p4_label.text = "Player 4 Bubbles: %s" % player4_bubbles
+	
+func reset_score():
+	player1_bubbles = 0
+	player2_bubbles = 0
+	player3_bubbles = 0
+	player4_bubbles = 0

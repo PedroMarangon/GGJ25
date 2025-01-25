@@ -15,3 +15,4 @@ func round_over():
 	await get_tree().create_timer(10).timeout
 	get_tree().paused = false
 	get_tree().reload_current_scene()
+	BubblePoints.reset_score()
