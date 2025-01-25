@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://d4nnc7sjnxci2"]
 
-[ext_resource type="Script" path="res://objects/player/Player.gd" id="1"]
+[ext_resource type="Script" path="res://objects/player/player.gd" id="1"]
 [ext_resource type="ArrayMesh" uid="uid://dsc3nyd5aa7i5" path="res://assets/models/pixar-ball.obj" id="3"]
 [ext_resource type="PhysicsMaterial" path="res://objects/player/PhysicsMaterial.tres" id="4"]
 

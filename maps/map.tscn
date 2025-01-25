@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://b6ihhbt2rufpe"]
+[gd_scene load_steps=9 format=3 uid="uid://b6ihhbt2rufpe"]
 
 [ext_resource type="Script" path="res://maps/floor.gd" id="1_otb4v"]
 [ext_resource type="Script" path="res://scripts/bubble_points.gd" id="2_2d8mw"]
-[ext_resource type="PackedScene" uid="uid://d4nnc7sjnxci2" path="res://objects/player/Player.tscn" id="3_3koh1"]
+[ext_resource type="PackedScene" uid="uid://cabq2bupdujyv" path="res://objects/timer.tscn" id="2_5feha"]
+[ext_resource type="PackedScene" uid="uid://d4nnc7sjnxci2" path="res://objects/player/player.tscn" id="3_3koh1"]
 [ext_resource type="PackedScene" path="res://objects/ground_bubble.tscn" id="3_7misl"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_coebl"]
@@ -80,6 +81,13 @@ offset_right = 1127.46
 offset_bottom = 628.295
 theme_override_font_sizes/font_size = 16
 text = "Bubble points player 4: 0"
+
+[node name="Timer" parent="CanvasLayer" instance=ExtResource("2_5feha")]
+offset_left = 565.735
+offset_top = 15.0
+offset_right = -540.265
+offset_bottom = -609.0
+horizontal_alignment = 1
 
 [node name="BubblePoints" type="Node" parent="."]
 script = ExtResource("2_2d8mw")
