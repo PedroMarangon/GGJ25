@@ -29,4 +29,9 @@ func _physics_process(delta):
 	var target_degrees = rad_to_deg(target_rotation)  # Convert to degrees
 	$HamsterParent.rotation_degrees = Vector3(0,target_degrees,0)
 	
+	update_player_score()
 	
+func update_player_score():
+	var number = BubblePoints.get_points_by_id(id)
+	var padded = "%03d" % number
+	$"RigidBody3D/Score".text = "P" + str(id + 1) + " " + "BP: " + str(padded)

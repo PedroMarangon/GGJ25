@@ -13,7 +13,7 @@ height = 0.5
 transparency = 1
 albedo_color = Color(0.458824, 0.454902, 1, 0.529412)
 
-[node name="GroundBubble" type="Area3D"]
+[node name="GroundBubble" type="Area3D" groups=["GroundBubble"]]
 script = ExtResource("1_bouqo")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]

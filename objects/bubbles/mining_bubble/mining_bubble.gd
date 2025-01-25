@@ -11,7 +11,7 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 	var player_id :int = collided_player.id
 	
 	health -= 1
-	body.linear_velocity.y = 5
+	body.linear_velocity.y = 24
 	body.linear_velocity.x = randf_range(-8, 8)
 	body.linear_velocity.z = randf_range(-8, 8)
 	if health <= 0:

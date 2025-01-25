@@ -12,7 +12,7 @@ height = 0.9
 transparency = 1
 albedo_color = Color(0.6024, 0.72, 0.0144, 1)
 
-[node name="FloatingBubble" type="Area3D"]
+[node name="FloatingBubble" type="Area3D" groups=["FloatingBubble"]]
 script = ExtResource("1_d78w3")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]

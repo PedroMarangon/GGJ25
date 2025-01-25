@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://b6ihhbt2rufpe"]
+[gd_scene load_steps=21 format=3 uid="uid://b6ihhbt2rufpe"]
 
 [ext_resource type="PackedScene" uid="uid://cabq2bupdujyv" path="res://objects/timer.tscn" id="2_5feha"]
 [ext_resource type="PackedScene" uid="uid://d4nnc7sjnxci2" path="res://objects/player/player.tscn" id="3_3koh1"]
@@ -11,16 +11,6 @@
 [ext_resource type="Texture2D" uid="uid://dcc0sm5j3vtdh" path="res://assets/textures/hamster_low_initialShadingGroup_BaseColor2.png" id="8_lu6h2"]
 [ext_resource type="Texture2D" uid="uid://ktm7643a8qfg" path="res://assets/textures/hamster_low_initialShadingGroup_BaseColor3.png" id="9_73q4l"]
 [ext_resource type="Texture2D" uid="uid://dkugmkgvwyp13" path="res://assets/textures/hamster_low_initialShadingGroup_BaseColor4.png" id="10_0efno"]
-
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_6vf8p"]
-
-[sub_resource type="Sky" id="Sky_dviwu"]
-sky_material = SubResource("ProceduralSkyMaterial_6vf8p")
-
-[sub_resource type="Environment" id="Environment_0ycbg"]
-background_mode = 2
-background_energy_multiplier = 0.15
-sky = SubResource("Sky_dviwu")
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_coebl"]
 
@@ -73,9 +63,6 @@ size = Vector3(2855.14, 1, 3162.87)
 
 [node name="Map" type="Node3D"]
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_0ycbg")
-
 [node name="Floor" type="MeshInstance3D" parent="."]
 transform = Transform3D(-30, 0, 0, 0, -0.2, 0, 0, 0, -30, 0, 0, 0.708752)
 mesh = SubResource("CylinderMesh_coebl")
@@ -86,7 +73,7 @@ mesh = SubResource("CylinderMesh_coebl")
 shape = SubResource("CylinderShape3D_fabxn")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(-1, -5.96222e-08, 6.3937e-08, 0, 0.731354, 0.681998, -8.74228e-08, 0.681998, -0.731354, 0, 35.213, -36.74)
+transform = Transform3D(-1, -5.96222e-08, 6.3937e-08, 0, 0.731354, 0.681998, -8.74228e-08, 0.681998, -0.731354, 0, 14.644, -14.479)
 projection = 1
 fov = 79.9198
 size = 21.34
@@ -117,28 +104,28 @@ script = ExtResource("3_wrvt7")
 [node name="Player" parent="." instance=ExtResource("3_3koh1")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 6.69792, 2.15169, 6.98227)
 material = SubResource("StandardMaterial3D_soj2n")
-rolling_force = 11
+rolling_force = 9
 jumping_force = 8.0
 
 [node name="Player2" parent="." instance=ExtResource("3_3koh1")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -7.00689, 2.15169, 5.92241)
 material = SubResource("StandardMaterial3D_totmp")
 id = 1
-rolling_force = 11
+rolling_force = 9
 jumping_force = 8.0
 
 [node name="Player3" parent="." instance=ExtResource("3_3koh1")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -6.7798, 2.15169, -5.19559)
 material = SubResource("StandardMaterial3D_bf2c5")
 id = 2
-rolling_force = 11
+rolling_force = 9
 jumping_force = 8.0
 
 [node name="Player4" parent="." instance=ExtResource("3_3koh1")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 6.74703, 2.15169, -5.19559)
 material = SubResource("StandardMaterial3D_uc1cd")
 id = 3
-rolling_force = 11
+rolling_force = 9
 jumping_force = 8.0
 
 [node name="Spawner" parent="." node_paths=PackedStringArray("spawn_parent") instance=ExtResource("8_00ss8")]

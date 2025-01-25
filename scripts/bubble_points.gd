@@ -21,7 +21,7 @@ var p4_label :Label
 
 @export var ground_bubble_value :int = 1
 @export var floating_bubble_value :int = 5
-@export var miner_bubble_value :int = 100
+@export var miner_bubble_value :int = 50
 
 @export var player1_bubbles :int = 0
 @export var player2_bubbles :int = 0
@@ -41,8 +41,6 @@ func add_bubble_points(player:int, bubble_type:BubbleValues) -> void:
 		2: player3_bubbles += value_to_add
 		3: player4_bubbles += value_to_add
 
-	update_ui()
-
 func get_ranked_points() -> Dictionary:
 	var scores = {
 		0: player1_bubbles,
@@ -58,12 +56,20 @@ func get_ranked_points() -> Dictionary:
 	for i in range(ranked.size()):
 		ranking[i] = [ranked[i], scores[ranked[i]]]
 	return ranking
+	
+func get_points_by_id(id):
+	match id:
+		0: return player1_bubbles
+		1: return player2_bubbles
+		2: return player3_bubbles
+		3: return player4_bubbles
 
-func update_ui():
-	p1_label.text = "Player 1 Bubbles: %s" % player1_bubbles
-	p2_label.text = "Player 2 Bubbles: %s" % player2_bubbles
-	p3_label.text = "Player 3 Bubbles: %s" % player3_bubbles
-	p4_label.text = "Player 4 Bubbles: %s" % player4_bubbles
+# OBSOLETO
+#func update_ui():
+	#p1_label.text = "Player 1 Bubbles: %s" % player1_bubbles
+	#p2_label.text = "Player 2 Bubbles: %s" % player2_bubbles
+	#p3_label.text = "Player 3 Bubbles: %s" % player3_bubbles
+	#p4_label.text = "Player 4 Bubbles: %s" % player4_bubbles
 	
 func reset_score():
 	player1_bubbles = 0
@@ -75,7 +81,7 @@ func remove_bubble_points(bubble_penalty, player_id):
 	var penalty = 0
 	match bubble_penalty:
 		BubblePenalties.DEATH:
-			penalty = 50
+			penalty = 10
 			
 	match player_id:
 		0: player1_bubbles -= penalty

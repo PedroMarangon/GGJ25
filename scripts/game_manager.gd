@@ -2,13 +2,14 @@ extends Node
 class_name GameManager
 
 func _ready() -> void:
+	print(Input.get_connected_joypads())
+	
 	%Timer.round_over.connect(round_over)
 
 var round_over_button_trigger = false
 const leaderboard_time = 10
 func round_over():
 	get_tree().paused = true
-	%PlayerPoints.visible = false
 	%Timer.visible = false
 	%RoundOverScreen.activate()
 	round_over_button_trigger = true
@@ -23,6 +24,5 @@ func _on_death_area_body_entered(body: Node3D) -> void:
 	
 	await get_tree().create_timer(4).timeout
 	BubblePoints.remove_bubble_points(BubblePoints.BubblePenalties.DEATH, body.get_parent().id)
-	BubblePoints.update_ui()
 	body.linear_velocity = Vector3.ZERO
 	body.position = Vector3.ZERO

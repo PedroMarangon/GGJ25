@@ -48,6 +48,12 @@ physics_material_override = ExtResource("4")
 gravity_scale = 8.0
 angular_damp = 1.0
 
+[node name="Score" type="Label3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00766152, 1.49369, 0)
+pixel_size = 0.014
+billboard = 1
+text = "BP: 000"
+
 [node name="CollisionShape" type="CollisionShape3D" parent="RigidBody3D"]
 shape = SubResource("1")
 

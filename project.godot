@@ -18,14 +18,14 @@ config/icon="res://icon.svg"
 [autoload]
 
 BubblePoints="*res://scripts/bubble_points.gd"
-
-[display]
-
-window/size/mode=2
+Tools="*res://scripts/tools.gd"
 
 [global_group]
 
 PLAYER="Players"
+FloatingBubble=""
+MinerBubble=""
+GroundBubble=""
 
 [input]
 
