@@ -37,7 +37,7 @@ func _on_bubble_timer_timeout():
 	$BubbleTimer.stop()
 	if current_player != null:
 		current_player.can_jump = true
-		current_player.rigid_body_3d.gravity_scale = 1
+		current_player.rigid_body_3d.gravity_scale = 8
 		current_player = null
 	self.queue_free()
 

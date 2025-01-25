@@ -45,6 +45,7 @@ target_position = Vector3(0, -1.09, 0)
 [node name="RigidBody3D" type="RigidBody3D" parent="." groups=["PLAYER"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
 physics_material_override = ExtResource("4")
+gravity_scale = 8.0
 angular_damp = 1.0
 
 [node name="CollisionShape" type="CollisionShape3D" parent="RigidBody3D"]

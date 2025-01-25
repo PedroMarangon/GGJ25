@@ -185,16 +185,22 @@ material = SubResource("StandardMaterial3D_soj2n")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.00689, 2.15169, 5.92241)
 material = SubResource("StandardMaterial3D_totmp")
 id = 1
+rolling_force = 10
+jumping_force = 7.0
 
 [node name="Player3" parent="." instance=ExtResource("3_3koh1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.7798, 2.15169, -5.19559)
 material = SubResource("StandardMaterial3D_bf2c5")
 id = 2
+rolling_force = 10
+jumping_force = 7.0
 
 [node name="Player4" parent="." instance=ExtResource("3_3koh1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.74703, 2.15169, -5.19559)
 material = SubResource("StandardMaterial3D_uc1cd")
 id = 3
+rolling_force = 10
+jumping_force = 7.0
 
 [node name="Spawner" parent="." node_paths=PackedStringArray("spawn_parent") instance=ExtResource("8_00ss8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.211, 0)
