@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://b6ihhbt2rufpe"]
+[gd_scene load_steps=22 format=3 uid="uid://b6ihhbt2rufpe"]
 
 [ext_resource type="Script" path="res://maps/floor.gd" id="1_otb4v"]
 [ext_resource type="PackedScene" uid="uid://cabq2bupdujyv" path="res://objects/timer.tscn" id="2_5feha"]
@@ -27,6 +27,21 @@ func _ready():
 	
 	BubblePoints.update_ui()
 "
+
+[sub_resource type="LabelSettings" id="LabelSettings_qavte"]
+font_size = 20
+
+[sub_resource type="LabelSettings" id="LabelSettings_2twvn"]
+font_size = 20
+
+[sub_resource type="LabelSettings" id="LabelSettings_0ifpe"]
+font_size = 20
+
+[sub_resource type="LabelSettings" id="LabelSettings_5utip"]
+font_size = 20
+
+[sub_resource type="LabelSettings" id="LabelSettings_u8ty6"]
+font_size = 31
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ihvxs"]
 albedo_color = Color(0, 1, 0.160178, 1)
@@ -71,45 +86,66 @@ script = SubResource("GDScript_bg0ln")
 [node name="PlayerPoints" type="Control" parent="CanvasLayer"]
 unique_name_in_owner = true
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="BpPlayer1" type="Label" parent="CanvasLayer/PlayerPoints"]
-layout_mode = 0
-offset_left = 18.0
-offset_top = 15.0
-offset_right = 209.0
-offset_bottom = 38.0
+layout_mode = 1
+offset_left = 25.0
+offset_top = 25.0
+offset_right = 216.0
+offset_bottom = 48.0
 theme_override_font_sizes/font_size = 16
 text = "Bubble points player 1: 0"
+label_settings = SubResource("LabelSettings_qavte")
 
 [node name="BpPlayer2" type="Label" parent="CanvasLayer/PlayerPoints"]
-layout_mode = 0
-offset_left = 936.455
-offset_top = 15.0
-offset_right = 1127.46
-offset_bottom = 38.0
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -220.0
+offset_top = 25.0
+offset_right = 19.0
+offset_bottom = 53.0
+grow_horizontal = 0
 theme_override_font_sizes/font_size = 16
 text = "Bubble points player 2: 0"
+label_settings = SubResource("LabelSettings_2twvn")
 
 [node name="BpPlayer3" type="Label" parent="CanvasLayer/PlayerPoints"]
-layout_mode = 0
-offset_left = 18.0
-offset_top = 605.295
-offset_right = 209.0
-offset_bottom = 628.295
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 28.0
+offset_top = -53.0
+offset_right = 267.0
+offset_bottom = -25.0
+grow_vertical = 0
 theme_override_font_sizes/font_size = 16
 text = "Bubble points player 3: 0"
+label_settings = SubResource("LabelSettings_0ifpe")
 
 [node name="BpPlayer4" type="Label" parent="CanvasLayer/PlayerPoints"]
-layout_mode = 0
-offset_left = 936.46
-offset_top = 605.295
-offset_right = 1127.46
-offset_bottom = 628.295
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -220.0
+offset_top = -53.0
+offset_right = 19.0
+offset_bottom = -25.0
+grow_horizontal = 0
+grow_vertical = 0
 theme_override_font_sizes/font_size = 16
 text = "Bubble points player 4: 0"
+label_settings = SubResource("LabelSettings_5utip")
 
 [node name="Timer" parent="CanvasLayer" instance=ExtResource("2_5feha")]
 unique_name_in_owner = true
@@ -117,6 +153,7 @@ offset_left = 565.735
 offset_top = 15.0
 offset_right = -540.265
 offset_bottom = -609.0
+label_settings = SubResource("LabelSettings_u8ty6")
 horizontal_alignment = 1
 remaining_time_seconds = 120
 
