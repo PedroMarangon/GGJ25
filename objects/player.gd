@@ -1,4 +1,8 @@
 extends CharacterBody3D
+class_name Player
+
+@export var id :int = 0
+
 
 @export var speed: float = 10
 @export var gravity: float = 9.8

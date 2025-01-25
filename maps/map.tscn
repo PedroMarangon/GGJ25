@@ -1,11 +1,27 @@
-[gd_scene load_steps=5 format=3 uid="uid://b6ihhbt2rufpe"]
+[gd_scene load_steps=7 format=3 uid="uid://b6ihhbt2rufpe"]
 
 [ext_resource type="PackedScene" uid="uid://c60aggx6hfjrb" path="res://objects/player.tscn" id="1_ak00w"]
 [ext_resource type="Script" path="res://scripts/bubble_points.gd" id="2_2d8mw"]
+[ext_resource type="PackedScene" uid="uid://ofrwtbcfkirp" path="res://objects/ground_bubble.tscn" id="3_7misl"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_coebl"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_fabxn"]
+
+[sub_resource type="GDScript" id="GDScript_bg0ln"]
+resource_name = "add_ui_to_bubbles"
+script/source = "extends CanvasLayer
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	BubblePoints.p1_label = $BpPlayer1
+	BubblePoints.p2_label = $BpPlayer2
+	BubblePoints.p3_label = $BpPlayer3
+	BubblePoints.p4_label = $BpPlayer4
+	
+	BubblePoints.update_ui()
+"
 
 [node name="Map" type="Node3D"]
 
@@ -33,12 +49,14 @@ transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 15.692
 shadow_enabled = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+script = SubResource("GDScript_bg0ln")
 
 [node name="BpPlayer1" type="Label" parent="CanvasLayer"]
 offset_left = 18.0
 offset_top = 15.0
 offset_right = 209.0
 offset_bottom = 38.0
+theme_override_font_sizes/font_size = 16
 text = "Bubble points player 1: 0"
 
 [node name="BpPlayer2" type="Label" parent="CanvasLayer"]
@@ -46,6 +64,7 @@ offset_left = 936.455
 offset_top = 15.0
 offset_right = 1127.46
 offset_bottom = 38.0
+theme_override_font_sizes/font_size = 16
 text = "Bubble points player 2: 0"
 
 [node name="BpPlayer3" type="Label" parent="CanvasLayer"]
@@ -53,6 +72,7 @@ offset_left = 18.0
 offset_top = 605.295
 offset_right = 209.0
 offset_bottom = 628.295
+theme_override_font_sizes/font_size = 16
 text = "Bubble points player 3: 0"
 
 [node name="BpPlayer4" type="Label" parent="CanvasLayer"]
@@ -60,7 +80,44 @@ offset_left = 936.46
 offset_top = 605.295
 offset_right = 1127.46
 offset_bottom = 628.295
+theme_override_font_sizes/font_size = 16
 text = "Bubble points player 4: 0"
 
 [node name="BubblePoints" type="Node" parent="."]
 script = ExtResource("2_2d8mw")
+
+[node name="GroundBubble" parent="." instance=ExtResource("3_7misl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0.239626, 3)
+
+[node name="GroundBubble2" parent="." instance=ExtResource("3_7misl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.66805, 0.239626, 2.41287)
+
+[node name="GroundBubble3" parent="." instance=ExtResource("3_7misl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.668048, 0.239626, 2.41287)
+
+[node name="GroundBubble4" parent="." instance=ExtResource("3_7misl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.24004, 0.239626, 2.94713)
+
+[node name="GroundBubble5" parent="." instance=ExtResource("3_7misl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.611274, 0.239626, 3.64818)
+
+[node name="GroundBubble6" parent="." instance=ExtResource("3_7misl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.06105, 0.239626, 3.0956)
+
+[node name="GroundBubble7" parent="." instance=ExtResource("3_7misl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.04035, 0.239626, 3.32424)
+
+[node name="GroundBubble8" parent="." instance=ExtResource("3_7misl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.94259, 0.239626, 5.29377)
+
+[node name="GroundBubble9" parent="." instance=ExtResource("3_7misl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.01911, 0.239626, 6.29022)
+
+[node name="GroundBubble10" parent="." instance=ExtResource("3_7misl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.666957, 0.239626, 6.87531)
+
+[node name="GroundBubble11" parent="." instance=ExtResource("3_7misl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.13097, 0.239626, 7.24225)
+
+[node name="GroundBubble12" parent="." instance=ExtResource("3_7misl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.07118, 0.239626, 6.11485)

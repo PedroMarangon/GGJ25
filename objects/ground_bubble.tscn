@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://ofrwtbcfkirp"]
+
+[ext_resource type="Script" path="res://ground_bubble.gd" id="1_bouqo"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_210nn"]
+radius = 0.3
+
+[sub_resource type="SphereMesh" id="SphereMesh_j0ro1"]
+radius = 0.25
+height = 0.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ve3tv"]
+transparency = 1
+albedo_color = Color(0.458824, 0.454902, 1, 0.529412)
+
+[node name="GroundBubble" type="Area3D"]
+script = ExtResource("1_bouqo")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_210nn")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_j0ro1")
+surface_material_override/0 = SubResource("StandardMaterial3D_ve3tv")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
