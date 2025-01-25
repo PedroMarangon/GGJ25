@@ -9,6 +9,7 @@ radius = 0.6
 height = 0.9
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5fhw0"]
+transparency = 1
 albedo_color = Color(0.6024, 0.72, 0.0144, 0.745098)
 
 [node name="FloatingBubble" type="Area3D"]
