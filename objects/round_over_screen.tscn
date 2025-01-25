@@ -1,0 +1,42 @@
+[gd_scene load_steps=4 format=3 uid="uid://c562nfghl3e7s"]
+
+[ext_resource type="Script" path="res://objects/round_over_screen.gd" id="1_0l006"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_y4sud"]
+font_size = 30
+
+[sub_resource type="LabelSettings" id="LabelSettings_gnvuo"]
+line_spacing = 100.0
+font_size = 40
+
+[node name="RoundOverScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0l006")
+
+[node name="FimDeRodada" type="Label" parent="."]
+layout_mode = 0
+offset_left = 490.0
+offset_top = 9.0
+offset_right = 706.0
+offset_bottom = 51.0
+text = "Fim de rodada!"
+label_settings = SubResource("LabelSettings_y4sud")
+
+[node name="Leaderboard" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 308.0
+offset_top = 59.0
+offset_right = 897.0
+offset_bottom = 632.0
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="Leaderboard"]
+layout_mode = 0
+offset_right = 589.0
+offset_bottom = 573.0
+label_settings = SubResource("LabelSettings_gnvuo")

@@ -10,10 +10,11 @@ func _ready() -> void:
 	$Timer.connect("timeout", label_update)
 
 func label_update():
-	remaining_time_seconds -= 1
-	var minutes = remaining_time_seconds / 60
-	var secs = remaining_time_seconds % 60
-	text = "%02d:%02d" % [minutes, secs]
-	
-	if remaining_time_seconds <= 0:
-		round_over.emit()
+	if remaining_time_seconds > 0:
+		remaining_time_seconds -= 1
+		var minutes = remaining_time_seconds / 60
+		var secs = remaining_time_seconds % 60
+		text = "%02d:%02d" % [minutes, secs]
+		
+		if remaining_time_seconds <= 0:
+			round_over.emit()
