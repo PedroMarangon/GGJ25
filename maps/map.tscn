@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://b6ihhbt2rufpe"]
+[gd_scene load_steps=15 format=3 uid="uid://b6ihhbt2rufpe"]
 
 [ext_resource type="Script" path="res://maps/floor.gd" id="1_otb4v"]
 [ext_resource type="PackedScene" uid="uid://cabq2bupdujyv" path="res://objects/timer.tscn" id="2_5feha"]
@@ -26,6 +26,18 @@ func _ready():
 	
 	BubblePoints.update_ui()
 "
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ihvxs"]
+albedo_color = Color(0, 1, 0.160178, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0ikl1"]
+albedo_color = Color(0, 0.225873, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2xjhe"]
+albedo_color = Color(1, 0.0467469, 0.0616683, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_868nq"]
+albedo_color = Color(1, 0.929063, 0, 1)
 
 [node name="Map" type="Node3D"]
 
@@ -102,7 +114,7 @@ offset_top = 15.0
 offset_right = -540.265
 offset_bottom = -609.0
 horizontal_alignment = 1
-remaining_time_seconds = 10
+remaining_time_seconds = 120
 
 [node name="RoundOverScreen" parent="CanvasLayer" instance=ExtResource("3_y0db7")]
 unique_name_in_owner = true
@@ -112,17 +124,21 @@ script = ExtResource("3_wrvt7")
 
 [node name="Player" parent="." instance=ExtResource("3_3koh1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.69792, 2.15169, 6.98227)
+material = SubResource("StandardMaterial3D_ihvxs")
 
 [node name="Player2" parent="." instance=ExtResource("3_3koh1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.00689, 2.15169, 5.92241)
+material = SubResource("StandardMaterial3D_0ikl1")
 id = 1
 
 [node name="Player3" parent="." instance=ExtResource("3_3koh1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.7798, 2.15169, -5.19559)
+material = SubResource("StandardMaterial3D_2xjhe")
 id = 2
 
 [node name="Player4" parent="." instance=ExtResource("3_3koh1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.74703, 2.15169, -5.19559)
+material = SubResource("StandardMaterial3D_868nq")
 id = 3
 
 [node name="GroundBubbles" type="Node3D" parent="."]

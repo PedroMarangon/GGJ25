@@ -5,5 +5,7 @@ func _ready() -> void:
 	
 func activate():
 	visible = true
-	for i in BubblePoints.get_ranked_points():
-		$Leaderboard/Label.text += "Player: %d \n" % [i]
+	var leaderboard = BubblePoints.get_ranked_points()
+	for value in leaderboard:
+		var player_points = leaderboard[value]
+		$Leaderboard/Label.text += "Player %d: %d \n" % [player_points[0] + 1, player_points[1]]

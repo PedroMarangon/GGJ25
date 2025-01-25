@@ -1,6 +1,7 @@
 extends Node3D
 class_name Player
 
+@export var material : Material
 @export var id :int = 0
 @export var can_jump :bool = true
 
@@ -8,6 +9,9 @@ class_name Player
 @export var jumping_force = 1.5
 
 @onready var rigid_body_3d :RigidBody3D = $RigidBody3D
+
+func _ready():
+	$"RigidBody3D/CollisionShape/pixar-ball".set_surface_override_material(0, material)
 
 func _physics_process(delta):
 	$FloorCheck.global_transform.origin = $RigidBody3D.global_transform.origin
