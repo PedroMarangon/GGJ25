@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://ofrwtbcfkirp"]
 
-[ext_resource type="Script" path="res://ground_bubble.gd" id="1_bouqo"]
+[ext_resource type="Script" path="res://objects/bubbles/ground_bubble/ground_bubble.gd" id="1_bouqo"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_210nn"]
 radius = 0.3

@@ -39,13 +39,34 @@ func add_bubble_points(player:int, bubble_type:BubbleValues) -> void:
 
 	update_ui()
 
-func get_ranked_points() -> Array[int]:
-	var result :Array[int] = [player1_bubbles, player2_bubbles, player3_bubbles, player4_bubbles]
+func get_ranked_points() -> Dictionary:
+	var scores = {
+		0: player1_bubbles,
+		1: player2_bubbles,
+		2: player3_bubbles,
+		3: player4_bubbles
+	}
 	
-	result.sort()
-	result.reverse()
-	
-	return result
+	# Ordena os jogadores por pontuação (do maior para o menor)
+	var ranked = scores.keys()
+	ranked.sort_custom(func(a, b): return scores[b] < scores[a])
+	var ranking = {}
+	for i in range(ranked.size()):
+		ranking[i] = [ranked[i], scores[ranked[i]]]
+	return ranking
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 func update_ui():
@@ -53,7 +74,3 @@ func update_ui():
 	p2_label.text = "Player 2 Bubbles: %s" % player2_bubbles
 	p3_label.text = "Player 3 Bubbles: %s" % player3_bubbles
 	p4_label.text = "Player 4 Bubbles: %s" % player4_bubbles
-
-
-func _sort_descending(a, b):
-	return b - a
