@@ -18,10 +18,10 @@ var p4_label :Label
 @export var floating_bubble_value :int = 5
 @export var miner_bubble_value :int = 100
 
-@export var player1_bubbles :int = 2
-@export var player2_bubbles :int = 200
-@export var player3_bubbles :int = 999
-@export var player4_bubbles :int = 100
+@export var player1_bubbles :int = 0
+@export var player2_bubbles :int = 0
+@export var player3_bubbles :int = 0
+@export var player4_bubbles :int = 0
 
 func add_bubble_points(player:int, bubble_type:BubbleValues) -> void:
 	var value_to_add :int = 0
@@ -53,20 +53,6 @@ func get_ranked_points() -> Dictionary:
 	for i in range(ranked.size()):
 		ranking[i] = [ranked[i], scores[ranked[i]]]
 	return ranking
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 func update_ui():
 	p1_label.text = "Player 1 Bubbles: %s" % player1_bubbles
