@@ -39,6 +39,12 @@ normal_texture = ExtResource("5_qcu61")
 [node name="Player" type="Node3D"]
 script = ExtResource("1")
 
+[node name="Score" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00766152, 1.74369, 0)
+pixel_size = 0.014
+billboard = 1
+text = "BP: 000"
+
 [node name="FloorCheck" type="RayCast3D" parent="."]
 target_position = Vector3(0, -1.09, 0)
 
@@ -47,12 +53,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
 physics_material_override = ExtResource("4")
 gravity_scale = 8.0
 angular_damp = 1.0
-
-[node name="Score" type="Label3D" parent="RigidBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00766152, 1.49369, 0)
-pixel_size = 0.014
-billboard = 1
-text = "BP: 000"
 
 [node name="CollisionShape" type="CollisionShape3D" parent="RigidBody3D"]
 shape = SubResource("1")

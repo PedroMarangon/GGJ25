@@ -15,6 +15,7 @@ func _ready():
 
 func _physics_process(delta):
 	$FloorCheck.global_transform.origin = $RigidBody3D.global_transform.origin
+	$Score.global_transform.origin = $RigidBody3D.global_transform.origin + Vector3(0, 2.3, -1)
 	
 	$RigidBody3D.linear_velocity.x -= Input.get_joy_axis(id, JOY_AXIS_LEFT_X)*(rolling_force*delta)
 	$RigidBody3D.linear_velocity.z -= Input.get_joy_axis(id, JOY_AXIS_LEFT_Y)*(rolling_force*delta)
@@ -34,4 +35,4 @@ func _physics_process(delta):
 func update_player_score():
 	var number = BubblePoints.get_points_by_id(id)
 	var padded = "%03d" % number
-	$"RigidBody3D/Score".text = "P" + str(id + 1) + " " + "BP: " + str(padded)
+	$Score.text = "P" + str(id + 1) + " " + "BP: " + str(padded)
