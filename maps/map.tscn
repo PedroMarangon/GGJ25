@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://b6ihhbt2rufpe"]
+[gd_scene load_steps=5 format=3 uid="uid://b6ihhbt2rufpe"]
 
 [ext_resource type="PackedScene" uid="uid://c60aggx6hfjrb" path="res://objects/player.tscn" id="1_ak00w"]
+[ext_resource type="Script" path="res://scripts/bubble_points.gd" id="2_2d8mw"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_coebl"]
 
@@ -60,3 +61,6 @@ offset_top = 605.295
 offset_right = 1127.46
 offset_bottom = 628.295
 text = "Bubble points player 4: 0"
+
+[node name="BubblePoints" type="Node" parent="."]
+script = ExtResource("2_2d8mw")
