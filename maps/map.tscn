@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://b6ihhbt2rufpe"]
+[gd_scene load_steps=17 format=3 uid="uid://b6ihhbt2rufpe"]
 
 [ext_resource type="Script" path="res://maps/floor.gd" id="1_otb4v"]
 [ext_resource type="PackedScene" uid="uid://cabq2bupdujyv" path="res://objects/timer.tscn" id="2_5feha"]
@@ -39,6 +39,9 @@ albedo_color = Color(1, 0.0467469, 0.0616683, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_868nq"]
 albedo_color = Color(1, 0.929063, 0, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kfo4w"]
+size = Vector3(2855.14, 1, 3162.87)
 
 [node name="Map" type="Node3D"]
 
@@ -190,3 +193,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 1)
 
 [node name="MiningBubble" parent="." instance=ExtResource("8_55fta")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.09093, 1.20681, -0.917902)
+
+[node name="DeathArea" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DeathArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.14204, -17.5682, -0.76073)
+shape = SubResource("BoxShape3D_kfo4w")
+
+[connection signal="body_entered" from="DeathArea" to="GameManager" method="_on_death_area_body_entered"]

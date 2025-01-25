@@ -9,6 +9,11 @@ enum BubbleValues
 	MINER
 }
 
+enum BubblePenalties
+{
+	DEATH
+}
+
 var p1_label :Label
 var p2_label :Label
 var p3_label :Label
@@ -65,3 +70,20 @@ func reset_score():
 	player2_bubbles = 0
 	player3_bubbles = 0
 	player4_bubbles = 0
+	
+func remove_bubble_points(bubble_penalty, player_id):
+	var penalty = 0
+	match bubble_penalty:
+		BubblePenalties.DEATH:
+			penalty = 50
+			
+	match player_id:
+		0: player1_bubbles -= penalty
+		1: player2_bubbles -= penalty
+		2: player3_bubbles -= penalty
+		3: player4_bubbles -= penalty
+		
+	player1_bubbles = clamp(player1_bubbles, 0, 99999999)
+	player2_bubbles = clamp(player2_bubbles, 0, 99999999)
+	player3_bubbles = clamp(player3_bubbles, 0, 99999999)
+	player4_bubbles = clamp(player4_bubbles, 0, 99999999)
