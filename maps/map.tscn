@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://b6ihhbt2rufpe"]
+[gd_scene load_steps=16 format=3 uid="uid://b6ihhbt2rufpe"]
 
 [ext_resource type="Script" path="res://maps/floor.gd" id="1_otb4v"]
 [ext_resource type="PackedScene" uid="uid://cabq2bupdujyv" path="res://objects/timer.tscn" id="2_5feha"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://scripts/game_manager.gd" id="3_wrvt7"]
 [ext_resource type="PackedScene" uid="uid://c562nfghl3e7s" path="res://objects/round_over_screen.tscn" id="3_y0db7"]
 [ext_resource type="PackedScene" uid="uid://ynlsrescgkr6" path="res://objects/bubbles/floating_bubble/floating_bubble.tscn" id="5_p40ac"]
+[ext_resource type="PackedScene" uid="uid://bhtmqa5l8njfe" path="res://objects/bubbles/mining_bubble/mining_bubble.tscn" id="8_55fta"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_coebl"]
 
@@ -186,3 +187,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -2)
 
 [node name="FloatingBubble2" parent="FloatingBubbles" instance=ExtResource("5_p40ac")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 1)
+
+[node name="MiningBubble" parent="." instance=ExtResource("8_55fta")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.09093, 1.20681, -0.917902)
