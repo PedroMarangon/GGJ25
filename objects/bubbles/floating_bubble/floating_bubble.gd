@@ -14,6 +14,9 @@ func _on_body_entered(body :Node3D):
 	
 	var collided_player = body.get_parent() as Player
 	
+	if not collided_player.can_jump:
+		return
+	
 	if current_player == null and current_player != collided_player:
 		current_player = collided_player
 		current_player.can_jump = false
