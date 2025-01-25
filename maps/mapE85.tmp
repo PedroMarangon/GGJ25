@@ -1,8 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://b6ihhbt2rufpe"]
+[gd_scene load_steps=7 format=3 uid="uid://b6ihhbt2rufpe"]
 
-[ext_resource type="Script" path="res://maps/floor.gd" id="1_otb4v"]
+[ext_resource type="PackedScene" uid="uid://c60aggx6hfjrb" path="res://objects/player.tscn" id="1_ak00w"]
 [ext_resource type="Script" path="res://scripts/bubble_points.gd" id="2_2d8mw"]
-[ext_resource type="PackedScene" uid="uid://d4nnc7sjnxci2" path="res://objects/player/Player.tscn" id="3_3koh1"]
 [ext_resource type="PackedScene" path="res://objects/ground_bubble.tscn" id="3_7misl"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_coebl"]
@@ -27,14 +26,17 @@ func _ready():
 [node name="Map" type="Node3D"]
 
 [node name="Floor" type="MeshInstance3D" parent="."]
-transform = Transform3D(20.9342, 0, 1.83013e-06, 0, -0.210746, 0, -1.83013e-06, 0, 20.9342, 0, 0, 0.708752)
+transform = Transform3D(20.9342, 0, -3.16097e-06, 0, -0.210746, 0, 3.16097e-06, 0, 20.9342, 0, 0, 0.708752)
 mesh = SubResource("CylinderMesh_coebl")
-script = ExtResource("1_otb4v")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Floor"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/StaticBody3D"]
 shape = SubResource("CylinderShape3D_fabxn")
+
+[node name="Player" parent="." instance=ExtResource("1_ak00w")]
+speed = 20.0
+friction = 10.0
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(-1, 5.96222e-08, -6.3937e-08, 0, 0.731354, 0.681998, 8.74228e-08, 0.681998, -0.731354, -0.0216932, 14.6439, -14.4789)
@@ -119,18 +121,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.13097, 0.239626, 7.24225)
 
 [node name="GroundBubble12" parent="." instance=ExtResource("3_7misl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.07118, 0.239626, 6.11485)
-
-[node name="Player" parent="." instance=ExtResource("3_3koh1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.69792, 2.15169, 6.98227)
-
-[node name="Player2" parent="." instance=ExtResource("3_3koh1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.00689, 2.15169, 5.92241)
-id = 1
-
-[node name="Player3" parent="." instance=ExtResource("3_3koh1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.7798, 2.15169, -5.19559)
-id = 2
-
-[node name="Player4" parent="." instance=ExtResource("3_3koh1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.74703, 2.15169, -5.19559)
-id = 3

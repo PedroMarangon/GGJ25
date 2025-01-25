@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://maps/floor.gd" id="1_otb4v"]
 [ext_resource type="Script" path="res://scripts/bubble_points.gd" id="2_2d8mw"]
-[ext_resource type="PackedScene" uid="uid://d4nnc7sjnxci2" path="res://objects/player/Player.tscn" id="3_3koh1"]
+[ext_resource type="PackedScene" uid="uid://d4nnc7sjnxci2" path="res://Player/Player.tscn" id="3_3koh1"]
 [ext_resource type="PackedScene" path="res://objects/ground_bubble.tscn" id="3_7misl"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_coebl"]
@@ -121,16 +121,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.13097, 0.239626, 7.24225)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.07118, 0.239626, 6.11485)
 
 [node name="Player" parent="." instance=ExtResource("3_3koh1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.69792, 2.15169, 6.98227)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.69792, 2.15169, -1.14513)
 
 [node name="Player2" parent="." instance=ExtResource("3_3koh1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.00689, 2.15169, 5.92241)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.00689, 2.15169, -1.14513)
 id = 1
-
-[node name="Player3" parent="." instance=ExtResource("3_3koh1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.7798, 2.15169, -5.19559)
-id = 2
-
-[node name="Player4" parent="." instance=ExtResource("3_3koh1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.74703, 2.15169, -5.19559)
-id = 3

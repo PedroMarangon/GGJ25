@@ -1,8 +1,9 @@
+# OBSOLETO
+
 extends CharacterBody3D
-class_name Player
+#class_name Player
 
 @export var id :int = 0
-
 
 @export var speed: float = 10
 @export var gravity: float = 9.8
@@ -19,19 +20,14 @@ func _physics_process(delta):
 		velocity.y -= gravity * delta
 	
 	# Handle jumping
-	if is_on_floor() and Input.is_action_just_pressed("ui_accept"):
+	if is_on_floor() and Input.is_joy_button_pressed(id, JOY_BUTTON_A):
 		velocity.y = jump_force
 	
 	# Get input direction
 	var input_dir := Vector2.ZERO
-	if Input.is_action_pressed("ui_right"):
-		input_dir.x += 1
-	if Input.is_action_pressed("ui_left"):
-		input_dir.x -= 1
-	if Input.is_action_pressed("ui_up"):
-		input_dir.y += 1
-	if Input.is_action_pressed("ui_down"):
-		input_dir.y -= 1
+	
+	input_dir.x = Input.get_joy_axis(id, JOY_AXIS_LEFT_X)
+	input_dir.y = -Input.get_joy_axis(id, JOY_AXIS_LEFT_Y)
 	
 	# Transform input direction based on camera orientation
 	var cam_basis = camera.global_transform.basis
