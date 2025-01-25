@@ -18,6 +18,8 @@ mesh = SubResource("CylinderMesh_coebl")
 shape = SubResource("CylinderShape3D_fabxn")
 
 [node name="Player" parent="." instance=ExtResource("1_ak00w")]
+speed = 20.0
+friction = 10.0
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(-1, 5.96222e-08, -6.3937e-08, 0, 0.731354, 0.681998, 8.74228e-08, 0.681998, -0.731354, -0.0216932, 14.6439, -14.4789)

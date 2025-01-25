@@ -5,7 +5,7 @@ extends CharacterBody3D
 @export var rotation_speed: float = 2.0
 @export var jump_force: float = 10.0
 @export var acceleration: float = 3.0
-@export var friction: float = 2.0
+@export var friction: float = 1.0
 
 @onready var camera: Camera3D = get_parent().get_node("Camera3D")
 
