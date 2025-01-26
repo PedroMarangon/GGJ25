@@ -1,9 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://d4nnc7sjnxci2"]
+[gd_scene load_steps=13 format=3 uid="uid://d0q5sef545y74"]
 
 [ext_resource type="Script" path="res://objects/player/player.gd" id="1"]
 [ext_resource type="ArrayMesh" uid="uid://bt3ccmwmcr68j" path="res://assets/models/hamster_low.obj" id="3_t6ljb"]
 [ext_resource type="PhysicsMaterial" uid="uid://bob4e8ml6bd5h" path="res://objects/player/PhysicsMaterial.tres" id="4"]
-[ext_resource type="PackedScene" path="res://objects/player/hamster_ball.tscn" id="4_n15c8"]
+[ext_resource type="PackedScene" uid="uid://biat3soxi7yty" path="res://objects/player/hamster_ball.tscn" id="4_n15c8"]
 [ext_resource type="Texture2D" uid="uid://50gqvevjmk65" path="res://assets/textures/hamster_low_initialShadingGroup_BaseColor.png" id="4_olsn2"]
 [ext_resource type="Texture2D" uid="uid://bbig72wdjxvsy" path="res://assets/textures/hamster_low_initialShadingGroup_Normal.png" id="5_qcu61"]
 [ext_resource type="Texture2D" uid="uid://dcu278755ubp1" path="res://assets/textures/hamster_low_initialShadingGroup_Roughness.png" id="6_jtaj0"]
@@ -67,6 +67,7 @@ skeleton = NodePath("../..")
 
 [node name="hamster_ball" parent="RigidBody3D/CollisionShape" instance=ExtResource("4_n15c8")]
 transform = Transform3D(0.98, 0, 0, 0, 0.98, 0, 0, 0, 0.98, 0, 0, 0)
+visible = false
 
 [node name="hamster_ball" parent="RigidBody3D/CollisionShape/hamster_ball" index="0"]
 surface_material_override/0 = SubResource("StandardMaterial3D_tuqji")
