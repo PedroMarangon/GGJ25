@@ -10,6 +10,7 @@ radius = 1.2
 height = 2.4
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5fhw0"]
+render_priority = 15
 transparency = 1
 albedo_color = Color(1, 1, 1, 0.662745)
 metallic = 0.35
@@ -17,6 +18,7 @@ metallic_specular = 1.0
 roughness = 0.29
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_brr6d"]
+render_priority = 14
 transparency = 1
 albedo_color = Color(1, 1, 1, 0.466667)
 metallic = 1.0
@@ -37,6 +39,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 0)
 shape = SubResource("SphereShape3D_210nn")
 
 [node name="MainMesh" type="MeshInstance3D" parent="CollisionShape3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.298844, 0)
 mesh = SubResource("SphereMesh_j0ro1")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_5fhw0")
