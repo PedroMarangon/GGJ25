@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://b6ihhbt2rufpe"]
+[gd_scene load_steps=26 format=3 uid="uid://b6ihhbt2rufpe"]
 
 [ext_resource type="PackedScene" uid="uid://cabq2bupdujyv" path="res://objects/timer.tscn" id="2_5feha"]
 [ext_resource type="PackedScene" uid="uid://d4nnc7sjnxci2" path="res://objects/player/player.tscn" id="3_3koh1"]
@@ -12,6 +12,8 @@
 [ext_resource type="Texture2D" uid="uid://ktm7643a8qfg" path="res://assets/textures/hamster_low_initialShadingGroup_BaseColor3.png" id="9_73q4l"]
 [ext_resource type="Texture2D" uid="uid://dkugmkgvwyp13" path="res://assets/textures/hamster_low_initialShadingGroup_BaseColor4.png" id="10_0efno"]
 [ext_resource type="PackedScene" uid="uid://cfggwswrj0xbc" path="res://assets/models/arena/arena.fbx" id="12_ukuni"]
+[ext_resource type="PackedScene" uid="uid://0dpkcl0u6dq8" path="res://assets/models/arena/argolas.fbx" id="13_gtxr5"]
+[ext_resource type="PackedScene" uid="uid://13day140g86k" path="res://assets/models/arena/cerca.fbx" id="14_ydnii"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_6vf8p"]
 sky_top_color = Color(0.493412, 0.455553, 0.905353, 1)
@@ -103,7 +105,7 @@ offset_right = -540.265
 offset_bottom = -609.0
 label_settings = SubResource("LabelSettings_u8ty6")
 horizontal_alignment = 1
-remaining_time_seconds = 80
+remaining_time_seconds = 120
 
 [node name="RoundOverScreen" parent="CanvasLayer" instance=ExtResource("3_y0db7")]
 unique_name_in_owner = true
@@ -141,6 +143,8 @@ jumping_force = 8.0
 [node name="Spawner" parent="." node_paths=PackedStringArray("spawn_parent") instance=ExtResource("8_00ss8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0559368, -1.59514, 4.37156)
 spawn_parent = NodePath("SpawnedBubbles")
+miner_chance = 0.1
+floating_chance = 0.2
 
 [node name="SpawnedBubbles" type="Node3D" parent="Spawner"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.211, 0)
@@ -159,5 +163,17 @@ transform = Transform3D(300, 0, 0, 0, 300, 0, 0, 0, 300, -0.000281334, -12.1788,
 [node name="CollisionShape3D" type="CollisionShape3D" parent="arena/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0229008, 0)
 shape = SubResource("CylinderShape3D_1h2wj")
+
+[node name="argolas" parent="." instance=ExtResource("13_gtxr5")]
+transform = Transform3D(72.565, 0, 0, 0, 72.565, 0, 0, 0, 72.565, 10.8315, -18.9175, 44.8243)
+
+[node name="argolas2" parent="." instance=ExtResource("13_gtxr5")]
+transform = Transform3D(-31.7815, 60.5587, -24.2541, 64.9536, 26.8723, -18.0164, -6.05371, -29.6008, -65.9759, 10.8315, -18.9175, -1.61516)
+
+[node name="argolas3" parent="." instance=ExtResource("13_gtxr5")]
+transform = Transform3D(57.1385, -13.9688, -42.4939, 14.1786, 71.0371, -4.2867, 42.4244, -4.92756, 58.6649, 8.0835, -15.6764, 15.232)
+
+[node name="cerca" parent="." instance=ExtResource("14_ydnii")]
+transform = Transform3D(-11.5463, 0, 226.441, 0, 226.735, 0, -226.441, 0, -11.5463, 18.4054, -2.06342, 8.30494)
 
 [connection signal="body_entered" from="DeathArea" to="GameManager" method="_on_death_area_body_entered"]

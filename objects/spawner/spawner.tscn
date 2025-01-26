@@ -7,8 +7,6 @@ radius = 11.0
 
 [node name="Spawner" type="Marker3D"]
 script = ExtResource("1_crrvt")
-miner_chance = null
-floating_chance = null
 
 [node name="Area3D" type="Area3D" parent="."]
 

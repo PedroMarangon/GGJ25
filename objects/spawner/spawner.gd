@@ -21,11 +21,8 @@ func spawn():
 	var rng :float = randf()
 	
 	var miner_count = Tools.count_nodes_in_group($SpawnedBubbles, "MinerBubble")
-	print("Miner count: ", miner_count)
 	var floating_count = Tools.count_nodes_in_group($SpawnedBubbles, "FloatingBubble")
-	print("Floating count: ", floating_count)
 	var ground_count = Tools.count_nodes_in_group($SpawnedBubbles, "GroundBubble")
-	print("Ground count: ", ground_count)
 	
 	if rng < miner_chance and miner_count < max_miner:
 		instance = MINING_BUBBLE.instantiate()
