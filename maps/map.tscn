@@ -1,9 +1,9 @@
-[gd_scene load_steps=26 format=3 uid="uid://b6ihhbt2rufpe"]
+[gd_scene load_steps=25 format=3 uid="uid://b6ihhbt2rufpe"]
 
 [ext_resource type="PackedScene" uid="uid://cabq2bupdujyv" path="res://objects/timer.tscn" id="2_5feha"]
 [ext_resource type="PackedScene" uid="uid://d4nnc7sjnxci2" path="res://objects/player/player.tscn" id="3_3koh1"]
 [ext_resource type="Script" path="res://scripts/game_manager.gd" id="3_wrvt7"]
-[ext_resource type="PackedScene" path="res://objects/round_over_screen.tscn" id="3_y0db7"]
+[ext_resource type="PackedScene" uid="uid://df17ft06qk6h7" path="res://objects/round_over_screen.tscn" id="3_y0db7"]
 [ext_resource type="Texture2D" uid="uid://50gqvevjmk65" path="res://assets/textures/hamster_low_initialShadingGroup_BaseColor.png" id="5_480rx"]
 [ext_resource type="Texture2D" uid="uid://bbig72wdjxvsy" path="res://assets/textures/hamster_low_initialShadingGroup_Normal.png" id="6_ysnnh"]
 [ext_resource type="Texture2D" uid="uid://dcu278755ubp1" path="res://assets/textures/hamster_low_initialShadingGroup_Roughness.png" id="7_7awx4"]
@@ -57,9 +57,6 @@ script/source = "extends CanvasLayer
 	#BubblePoints.p4_label = $\"PlayerPoints/BpPlayer4\"
 	#BubblePoints.update_ui()
 "
-
-[sub_resource type="LabelSettings" id="LabelSettings_u8ty6"]
-font_size = 31
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_soj2n"]
 albedo_texture = ExtResource("5_480rx")
@@ -116,7 +113,6 @@ offset_left = 565.735
 offset_top = 15.0
 offset_right = -540.265
 offset_bottom = -609.0
-label_settings = SubResource("LabelSettings_u8ty6")
 horizontal_alignment = 1
 remaining_time_seconds = 120
 

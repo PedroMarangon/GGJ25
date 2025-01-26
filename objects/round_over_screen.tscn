@@ -1,9 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://c562nfghl3e7s"]
+[gd_scene load_steps=7 format=3 uid="uid://df17ft06qk6h7"]
 
 [ext_resource type="Script" path="res://objects/round_over_screen.gd" id="1_0l006"]
+[ext_resource type="FontFile" uid="uid://c3b4paoav3dpt" path="res://assets/fonts/BubblegumSans-Regular.ttf" id="2_r2mfj"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_y4sud"]
-font_size = 30
+font_size = 50
+outline_size = 22
+outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2p1aa"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -36,6 +39,7 @@ offset_top = -324.0
 offset_right = 180.456
 offset_bottom = -212.0
 grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_r2mfj")
 text = "Fim de rodada!"
 label_settings = SubResource("LabelSettings_y4sud")
 horizontal_alignment = 1
@@ -67,6 +71,7 @@ offset_right = 178.0
 offset_bottom = 236.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_r2mfj")
 theme_override_styles/normal = SubResource("StyleBoxFlat_npwxb")
 label_settings = SubResource("LabelSettings_gnvuo")
 horizontal_alignment = 1
