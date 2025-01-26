@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://dcc0sm5j3vtdh" path="res://assets/textures/hamster_low_initialShadingGroup_BaseColor2.png" id="8_lu6h2"]
 [ext_resource type="Texture2D" uid="uid://ktm7643a8qfg" path="res://assets/textures/hamster_low_initialShadingGroup_BaseColor3.png" id="9_73q4l"]
 [ext_resource type="Texture2D" uid="uid://dkugmkgvwyp13" path="res://assets/textures/hamster_low_initialShadingGroup_BaseColor4.png" id="10_0efno"]
+[ext_resource type="PackedScene" uid="uid://cfggwswrj0xbc" path="res://assets/models/arena/arena.fbx" id="12_ukuni"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_6vf8p"]
 sky_top_color = Color(0.493412, 0.455553, 0.905353, 1)
@@ -26,10 +27,6 @@ background_mode = 2
 sky = SubResource("Sky_dviwu")
 ambient_light_source = 3
 reflected_light_source = 2
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_coebl"]
-
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_fabxn"]
 
 [sub_resource type="GDScript" id="GDScript_bg0ln"]
 resource_name = "add_ui_to_bubbles"
@@ -76,19 +73,14 @@ normal_texture = ExtResource("6_ysnnh")
 [sub_resource type="BoxShape3D" id="BoxShape3D_kfo4w"]
 size = Vector3(2855.14, 1, 3162.87)
 
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_1h2wj"]
+height = 0.0115629
+radius = 0.0426093
+
 [node name="Map" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_0ycbg")
-
-[node name="Floor" type="MeshInstance3D" parent="."]
-transform = Transform3D(-30, 0, 0, 0, -0.2, 0, 0, 0, -30, 0, 0, 0.708752)
-mesh = SubResource("CylinderMesh_coebl")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Floor"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/StaticBody3D"]
-shape = SubResource("CylinderShape3D_fabxn")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(-1, -5.96222e-08, 6.3937e-08, 0, 0.731354, 0.681998, -8.74228e-08, 0.681998, -0.731354, 0, 35.213, -36.74)
@@ -120,34 +112,34 @@ unique_name_in_owner = true
 script = ExtResource("3_wrvt7")
 
 [node name="Player" parent="." instance=ExtResource("3_3koh1")]
-transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 6.69792, 2.15169, 6.98227)
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 6.69792, 2.15169, 13.1141)
 material = SubResource("StandardMaterial3D_soj2n")
 rolling_force = 11
 jumping_force = 8.0
 
 [node name="Player2" parent="." instance=ExtResource("3_3koh1")]
-transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -7.00689, 2.15169, 5.92241)
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -7.00689, 2.15169, 13.04)
 material = SubResource("StandardMaterial3D_totmp")
 id = 1
 rolling_force = 11
 jumping_force = 8.0
 
 [node name="Player3" parent="." instance=ExtResource("3_3koh1")]
-transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -6.7798, 2.15169, -5.19559)
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -6.7798, 2.15169, -0.826133)
 material = SubResource("StandardMaterial3D_bf2c5")
 id = 2
 rolling_force = 11
 jumping_force = 8.0
 
 [node name="Player4" parent="." instance=ExtResource("3_3koh1")]
-transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 6.74703, 2.15169, -5.19559)
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 6.74703, 2.15169, -0.631619)
 material = SubResource("StandardMaterial3D_uc1cd")
 id = 3
 rolling_force = 11
 jumping_force = 8.0
 
 [node name="Spawner" parent="." node_paths=PackedStringArray("spawn_parent") instance=ExtResource("8_00ss8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.211, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0559368, -1.59514, 4.37156)
 spawn_parent = NodePath("SpawnedBubbles")
 
 [node name="SpawnedBubbles" type="Node3D" parent="Spawner"]
@@ -158,5 +150,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.211, 0)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="DeathArea"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.14204, -17.5682, -0.76073)
 shape = SubResource("BoxShape3D_kfo4w")
+
+[node name="arena" parent="." instance=ExtResource("12_ukuni")]
+transform = Transform3D(300, 0, 0, 0, 300, 0, 0, 0, 300, -0.000281334, -12.1788, 6.64613)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="arena"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="arena/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0229008, 0)
+shape = SubResource("CylinderShape3D_1h2wj")
 
 [connection signal="body_entered" from="DeathArea" to="GameManager" method="_on_death_area_body_entered"]
