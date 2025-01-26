@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://objects/player/player.gd" id="1"]
 [ext_resource type="ArrayMesh" uid="uid://bt3ccmwmcr68j" path="res://assets/models/hamster_low.obj" id="3_t6ljb"]
 [ext_resource type="PhysicsMaterial" uid="uid://bob4e8ml6bd5h" path="res://objects/player/PhysicsMaterial.tres" id="4"]
-[ext_resource type="PackedScene" uid="uid://biat3soxi7yty" path="res://objects/player/hamster_ball.tscn" id="4_n15c8"]
+[ext_resource type="PackedScene" path="res://objects/player/hamster_ball.tscn" id="4_n15c8"]
 [ext_resource type="Texture2D" uid="uid://50gqvevjmk65" path="res://assets/textures/hamster_low_initialShadingGroup_BaseColor.png" id="4_olsn2"]
 [ext_resource type="Texture2D" uid="uid://bbig72wdjxvsy" path="res://assets/textures/hamster_low_initialShadingGroup_Normal.png" id="5_qcu61"]
 [ext_resource type="Texture2D" uid="uid://dcu278755ubp1" path="res://assets/textures/hamster_low_initialShadingGroup_Roughness.png" id="6_jtaj0"]
@@ -83,7 +83,7 @@ gizmo_extents = 2.48
 
 [node name="HamsterMesh" type="MeshInstance3D" parent="HamsterParent"]
 unique_name_in_owner = true
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, -0.00101578, -0.176267)
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 0.43222, -0.290614)
 mesh = ExtResource("3_t6ljb")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_qq4pn")
