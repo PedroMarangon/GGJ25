@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://ofrwtbcfkirp"]
+[gd_scene load_steps=8 format=3 uid="uid://ofrwtbcfkirp"]
 
 [ext_resource type="Script" path="res://objects/bubbles/ground_bubble/ground_bubble.gd" id="1_bouqo"]
 
@@ -11,7 +11,22 @@ height = 0.5
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ve3tv"]
 transparency = 1
-albedo_color = Color(0.458824, 0.454902, 1, 0.529412)
+albedo_color = Color(1, 1, 1, 0.129412)
+metallic = 1.0
+roughness = 0.55
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jm6mn"]
+transparency = 1
+albedo_color = Color(0.2548, 0.677833, 0.98, 0.529412)
+metallic = 1.0
+metallic_specular = 0.0
+roughness = 0.5
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_0vxqo"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o6vmq"]
+transparency = 1
+albedo_color = Color(0, 0, 0, 0.470588)
 
 [node name="GroundBubble" type="Area3D" groups=["GroundBubble"]]
 script = ExtResource("1_bouqo")
@@ -22,5 +37,15 @@ shape = SubResource("SphereShape3D_210nn")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("SphereMesh_j0ro1")
 surface_material_override/0 = SubResource("StandardMaterial3D_ve3tv")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, 0, 0, 0)
+mesh = SubResource("SphereMesh_j0ro1")
+surface_material_override/0 = SubResource("StandardMaterial3D_jm6mn")
+
+[node name="ShadowMesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.7, 0, 0, 0, 0.008, 0, 0, 0, 0.7, 0, 0, 0)
+mesh = SubResource("CylinderMesh_0vxqo")
+surface_material_override/0 = SubResource("StandardMaterial3D_o6vmq")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
