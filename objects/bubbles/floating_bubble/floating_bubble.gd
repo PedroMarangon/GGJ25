@@ -37,10 +37,11 @@ func _on_body_entered(body :Node3D):
 		
 		var land_tween = get_tree().create_tween()
 		const LAND_SCALE = Vector3(1.405, 0.955, 1.405)
+		const FINAL_SCALE = Vector3(1.7, 0.5, 1.7)
 		
 		land_tween.tween_property($CollisionShape3D/MainMesh, "scale", LAND_SCALE, 0.1)
 		land_tween.tween_property($CollisionShape3D/MainMesh, "scale", Vector3.ONE, 0.1)
-		
+		land_tween.tween_property($CollisionShape3D/MainMesh, "scale", FINAL_SCALE, $BubbleTimer.wait_time)
 		
 		
 		

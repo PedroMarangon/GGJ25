@@ -7,6 +7,7 @@ class_name Player
 @export var can_jump :bool = true
 
 @export var rolling_force = 7
+@export var bubble_roll_force = 3.5
 @export var jumping_force = 1.5
 
 @onready var rigid_body_3d :RigidBody3D = $RigidBody3D
@@ -36,8 +37,9 @@ func _physics_process(delta):
 
 
 func update_position(joystick :Vector2,delta:float):
-	$RigidBody3D.linear_velocity.x -= joystick.x*(rolling_force*delta)
-	$RigidBody3D.linear_velocity.z -= joystick.y*(rolling_force*delta)
+	var speed :float = rolling_force if can_jump else bubble_roll_force
+	$RigidBody3D.linear_velocity.x -= joystick.x*(speed*delta)
+	$RigidBody3D.linear_velocity.z -= joystick.y*(speed*delta)
 	if can_jump and Input.is_joy_button_pressed(id, JOY_BUTTON_A) and $FloorCheck.is_colliding():
 		$RigidBody3D.apply_central_impulse(Vector3(0, 1, 0) * jumping_force)
 
