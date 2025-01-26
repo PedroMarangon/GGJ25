@@ -27,4 +27,9 @@ func _update_leaderboard(delta):
 		var player_score = player_info[1]
 		
 		referenceLabels[player_id].position = referenceLabels[player_id].position.lerp(referenceVboxPositions[player_rank], delta*3)
+		# If it's a promotion!
+		if referenceLabels[player_id].position.distance_to(referenceVboxPositions[player_rank]) > 1 and referenceLabels[player_id].position > referenceVboxPositions[player_rank]:
+			referenceLabels[player_id].label_settings.shadow_size = lerp(referenceLabels[player_id].label_settings.shadow_size, 22, 0.1)
+		else:
+			referenceLabels[player_id].label_settings.shadow_size = lerp(referenceLabels[player_id].label_settings.shadow_size, 0, 0.2)
 		referenceLabels[player_id].text = "Bubble Points Player %d: %d" % [player_id + 1, player_score]
