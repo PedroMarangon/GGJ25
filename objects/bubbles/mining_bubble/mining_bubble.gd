@@ -39,6 +39,6 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 		
 		death_tween.tween_property($miner_bubble, "scale", DEATH_SCALE, 0.2)
 		death_tween.tween_callback(queue_free)
-		
+		AudioManager.play(["res://sounds/pops/pop006_miner.ogg"], 0.5, -30)
 		
 		#self.queue_free()

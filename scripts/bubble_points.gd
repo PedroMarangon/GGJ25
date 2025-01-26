@@ -31,9 +31,12 @@ var p4_label :Label
 func add_bubble_points(player:int, bubble_type:BubbleValues) -> void:
 	var value_to_add :int = 0
 	match bubble_type:
-		BubbleValues.GROUND: value_to_add = ground_bubble_value
-		BubbleValues.FLOATING: value_to_add = floating_bubble_value
-		BubbleValues.MINER: value_to_add = miner_bubble_value
+		BubbleValues.GROUND: 
+			value_to_add = ground_bubble_value
+		BubbleValues.FLOATING: 
+			value_to_add = floating_bubble_value
+		BubbleValues.MINER: 
+			value_to_add = miner_bubble_value
 	
 	match player:
 		0: player1_bubbles += value_to_add

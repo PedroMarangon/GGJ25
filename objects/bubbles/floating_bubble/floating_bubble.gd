@@ -60,6 +60,7 @@ func _on_bubble_timer_timeout():
 		current_player.can_jump = true
 		current_player.rigid_body_3d.gravity_scale = 8
 		current_player = null
+	AudioManager.play(["res://sounds/pops/pop004.ogg"], 1, -30)
 	self.queue_free()
 
 
