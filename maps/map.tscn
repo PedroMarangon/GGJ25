@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://3l8v2hrwv2wy" path="res://objects/leaderboard.tscn" id="2_pt8oo"]
 [ext_resource type="PackedScene" uid="uid://d4nnc7sjnxci2" path="res://objects/player/player.tscn" id="3_3koh1"]
 [ext_resource type="Script" path="res://scripts/game_manager.gd" id="3_wrvt7"]
-[ext_resource type="PackedScene" uid="uid://c562nfghl3e7s" path="res://objects/round_over_screen.tscn" id="3_y0db7"]
+[ext_resource type="PackedScene" uid="uid://df17ft06qk6h7" path="res://objects/round_over_screen.tscn" id="3_y0db7"]
 [ext_resource type="Texture2D" uid="uid://50gqvevjmk65" path="res://assets/textures/hamster_low_initialShadingGroup_BaseColor.png" id="5_480rx"]
 [ext_resource type="Texture2D" uid="uid://bbig72wdjxvsy" path="res://assets/textures/hamster_low_initialShadingGroup_Normal.png" id="6_ysnnh"]
 [ext_resource type="Texture2D" uid="uid://dcu278755ubp1" path="res://assets/textures/hamster_low_initialShadingGroup_Roughness.png" id="7_7awx4"]
