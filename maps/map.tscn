@@ -153,14 +153,17 @@ horizontal_alignment = 1
 remaining_time_seconds = 120
 
 [node name="Leaderboard" parent="CanvasLayer" instance=ExtResource("2_pt8oo")]
+anchors_preset = 0
 anchor_left = 0.0
-anchor_top = 0.471
+anchor_top = 0.0
 anchor_right = 0.0
-anchor_bottom = 0.471
-offset_left = 238.0
-offset_top = 24.792
-offset_right = 238.0
-offset_bottom = 24.792
+anchor_bottom = 0.0
+offset_left = 223.9
+offset_top = 156.695
+offset_right = 223.9
+offset_bottom = 156.695
+grow_horizontal = 1
+grow_vertical = 1
 
 [node name="RoundOverScreen" parent="CanvasLayer" instance=ExtResource("3_y0db7")]
 unique_name_in_owner = true
@@ -173,6 +176,7 @@ script = ExtResource("3_wrvt7")
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 6.69792, 2.15169, 13.1141)
 material = SubResource("StandardMaterial3D_soj2n")
 ball_material = SubResource("StandardMaterial3D_e4m52")
+text_color = Color(1, 0.403922, 0.929412, 1)
 rolling_force = 11
 jumping_force = 8.0
 
@@ -180,6 +184,7 @@ jumping_force = 8.0
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -7.00689, 2.15169, 13.04)
 material = SubResource("StandardMaterial3D_totmp")
 ball_material = SubResource("StandardMaterial3D_epwsf")
+text_color = Color(1, 0.521569, 0, 1)
 id = 1
 rolling_force = 11
 jumping_force = 8.0
@@ -188,6 +193,7 @@ jumping_force = 8.0
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -6.7798, 2.15169, -0.826133)
 material = SubResource("StandardMaterial3D_bf2c5")
 ball_material = SubResource("StandardMaterial3D_eyn7g")
+text_color = Color(0.396078, 0.968627, 1, 1)
 id = 2
 rolling_force = 11
 jumping_force = 8.0
@@ -196,6 +202,7 @@ jumping_force = 8.0
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 6.74703, 2.15169, -0.631619)
 material = SubResource("StandardMaterial3D_uc1cd")
 ball_material = SubResource("StandardMaterial3D_t3tbl")
+text_color = Color(0.556863, 1, 0.2, 1)
 id = 3
 rolling_force = 11
 jumping_force = 8.0

@@ -9,6 +9,6 @@ func _on_body_entered(body :Node3D):
 	var player_id :int = collided_player.id
 	
 	BubblePoints.add_bubble_points(player_id, BubblePointSystem.BubbleValues.GROUND)
-	AudioManager.play(["res://sounds/pops/pop001.ogg","res://sounds/pops/pop002.ogg","res://sounds/pops/pop003.ogg"], 1, -50)
+	AudioManager.play(["res://sounds/pops/pop001.ogg","res://sounds/pops/pop002.ogg","res://sounds/pops/pop003.ogg"], 1, -20)
 	
 	self.queue_free()

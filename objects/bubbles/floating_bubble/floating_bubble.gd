@@ -39,12 +39,10 @@ func _on_body_entered(body :Node3D):
 		const LAND_SCALE = Vector3(1.405, 0.955, 1.405)
 		const FINAL_SCALE = Vector3(1.7, 0.5, 1.7)
 		
+		AudioManager.play(["res://sounds/floating_bubble.ogg"], 1.05, -10)
 		land_tween.tween_property($CollisionShape3D/MainMesh, "scale", LAND_SCALE, 0.1)
 		land_tween.tween_property($CollisionShape3D/MainMesh, "scale", Vector3.ONE, 0.1)
 		land_tween.tween_property($CollisionShape3D/MainMesh, "scale", FINAL_SCALE, $BubbleTimer.wait_time)
-		
-		
-		
 		
 		$PointsTimer.start()
 		$BubbleTimer.start()
@@ -60,7 +58,7 @@ func _on_bubble_timer_timeout():
 		current_player.can_jump = true
 		current_player.rigid_body_3d.gravity_scale = 8
 		current_player = null
-	AudioManager.play(["res://sounds/pops/pop004.ogg"], 1, -30)
+	AudioManager.play(["res://sounds/pops/pop004.ogg"], 1, -10)
 	self.queue_free()
 
 

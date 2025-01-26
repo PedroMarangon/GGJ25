@@ -4,7 +4,7 @@ extends Marker3D
 
 @export var max_miner = 1
 @export var max_floating = 3
-@export var max_ground = 30
+@export var max_ground = 40
 
 #@export_range(0,1, 0.05) var miner_chance :float = 0.05
 #@export_range(0,1, 0.1) var floating_chance :float = 0.1

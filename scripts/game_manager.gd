@@ -21,7 +21,8 @@ func round_over():
 func _on_death_area_body_entered(body: Node3D) -> void:
 	if not body.is_in_group("PLAYER"):
 		return
-	
+		
+	AudioManager.play(["res://sounds/fall.ogg"], 1.3, -65)
 	BubblePoints.remove_bubble_points(BubblePoints.BubblePenalties.DEATH, body.get_parent().id, body.get_parent().last_player_collided_id)
 	body.get_parent().last_player_collided_id = null
 	await get_tree().create_timer(1.5).timeout

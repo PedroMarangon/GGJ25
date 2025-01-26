@@ -3,6 +3,7 @@ class_name Player
 
 @export var material : Material
 @export var ball_material : Material
+@export var text_color : Color
 @export var id :int = 0
 @export var can_jump :bool = true
 
@@ -18,6 +19,7 @@ var last_player_collided_id = null
 func _ready():
 	$HamsterParent.scale = Vector3.ONE * 0.5
 	%Score.scale = Vector3.ONE * 1.5
+	%Score.modulate = text_color
 	%HamsterMesh.set_surface_override_material(0, material)
 	$RigidBody3D/CollisionShape/hamster_ball2/hamster_ball.set_surface_override_material(0, ball_material)
 

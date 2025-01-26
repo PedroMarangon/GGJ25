@@ -30,26 +30,30 @@ shadow_color = Color(0.94902, 0.25098, 1, 0)
 [sub_resource type="LabelSettings" id="LabelSettings_yc6pw"]
 font = ExtResource("2_e3144")
 font_size = 36
-shadow_size = 0
-shadow_color = Color(0.890196, 0.0901961, 0.32549, 1)
+font_color = Color(0.683594, 0.276118, 0.63534, 1)
+shadow_size = 4
+shadow_color = Color(1, 0.403922, 0.929412, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_xtscc"]
 font = ExtResource("2_e3144")
 font_size = 36
+font_color = Color(0.738281, 0.385064, 0, 1)
 shadow_size = 0
-shadow_color = Color(0.890196, 0.0901961, 0.32549, 1)
+shadow_color = Color(1, 0.521569, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_qwihk"]
 font = ExtResource("2_e3144")
 font_size = 36
+font_color = Color(0.298606, 0.730254, 0.753906, 1)
 shadow_size = 0
-shadow_color = Color(0.890196, 0.0901961, 0.32549, 1)
+shadow_color = Color(0.396078, 0.968627, 1, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_ioqsg"]
 font = ExtResource("2_e3144")
 font_size = 36
+font_color = Color(0.369792, 0.664063, 0.132812, 1)
 shadow_size = 0
-shadow_color = Color(0.890196, 0.0901961, 0.32549, 1)
+shadow_color = Color(0.556863, 1, 0.2, 1)
 
 [node name="Leaderboard" type="Control"]
 layout_mode = 3
@@ -144,7 +148,7 @@ offset_left = 0.0159912
 offset_right = 381.016
 offset_bottom = 43.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_8k81i")
-text = "  Player 1: 0"
+text = "Player 1: 0"
 label_settings = SubResource("LabelSettings_yc6pw")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -156,7 +160,7 @@ offset_top = 47.0
 offset_right = 381.016
 offset_bottom = 90.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_8k81i")
-text = "  Player 2: 0"
+text = "Player 2: 0"
 label_settings = SubResource("LabelSettings_xtscc")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -168,7 +172,7 @@ offset_top = 97.0
 offset_right = 381.016
 offset_bottom = 140.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_8k81i")
-text = "  Player 3: 0"
+text = "Player 3: 0"
 label_settings = SubResource("LabelSettings_qwihk")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -180,7 +184,7 @@ offset_top = 144.0
 offset_right = 381.016
 offset_bottom = 187.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_8k81i")
-text = "  Player 4: 0"
+text = "Player 4: 0"
 label_settings = SubResource("LabelSettings_ioqsg")
 horizontal_alignment = 1
 vertical_alignment = 1

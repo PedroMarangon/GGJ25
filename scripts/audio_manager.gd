@@ -21,11 +21,12 @@ func play(audio_path_array : Array, pitch_scale = 1, volume_db = 1):
 	for audio_track : AudioStreamPlayer in tracks:
 		if audio_track.playing:
 			continue
-		else:
+		else:			
 			audio_track.stream = load(audio_path)
 			audio_track.volume_db = volume_db
 			audio_track.pitch_scale = pitch_scale
 			audio_track.play()
+			break
 
 
 # ============================================================================
