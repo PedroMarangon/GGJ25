@@ -93,6 +93,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.64, 0)
 pixel_size = 0.014
 billboard = 1
 no_depth_test = true
+render_priority = 20
 text = "BP: 000"
 font = ExtResource("9_yiljm")
 

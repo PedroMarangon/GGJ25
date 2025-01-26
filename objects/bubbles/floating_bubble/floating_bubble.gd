@@ -7,7 +7,7 @@ var sin_counter :float = 0
 func _physics_process(delta):
 	if current_player == null:
 		sin_counter += delta
-		$CollisionShape3D/MainMesh.position.y = sin(sin_counter) * 0.2
+		$CollisionShape3D/MainMesh.position.y = sin(sin_counter) * 0.5
 		return
 	
 	$CollisionShape3D.global_position = current_player.rigid_body_3d.global_position

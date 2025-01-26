@@ -2,6 +2,7 @@ extends Node3D
 class_name Player
 
 @export var material : Material
+@export var ball_material : Material
 @export var id :int = 0
 @export var can_jump :bool = true
 
@@ -17,6 +18,7 @@ func _ready():
 	$HamsterParent.scale = Vector3.ONE * 0.5
 	%Score.scale = Vector3.ONE * 1.5
 	%HamsterMesh.set_surface_override_material(0, material)
+	$RigidBody3D/CollisionShape/hamster_ball2/hamster_ball.set_surface_override_material(0, ball_material)
 
 func _physics_process(delta):
 	$FloorCheck.global_transform.origin = $RigidBody3D.global_transform.origin

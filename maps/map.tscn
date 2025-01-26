@@ -1,10 +1,10 @@
-[gd_scene load_steps=27 format=3 uid="uid://b6ihhbt2rufpe"]
+[gd_scene load_steps=31 format=3 uid="uid://b6ihhbt2rufpe"]
 
 [ext_resource type="PackedScene" uid="uid://cabq2bupdujyv" path="res://objects/timer.tscn" id="2_5feha"]
 [ext_resource type="PackedScene" uid="uid://3l8v2hrwv2wy" path="res://objects/leaderboard.tscn" id="2_pt8oo"]
 [ext_resource type="PackedScene" uid="uid://d4nnc7sjnxci2" path="res://objects/player/player.tscn" id="3_3koh1"]
 [ext_resource type="Script" path="res://scripts/game_manager.gd" id="3_wrvt7"]
-[ext_resource type="PackedScene" uid="uid://df17ft06qk6h7" path="res://objects/round_over_screen.tscn" id="3_y0db7"]
+[ext_resource type="PackedScene" uid="uid://c562nfghl3e7s" path="res://objects/round_over_screen.tscn" id="3_y0db7"]
 [ext_resource type="Texture2D" uid="uid://50gqvevjmk65" path="res://assets/textures/hamster_low_initialShadingGroup_BaseColor.png" id="5_480rx"]
 [ext_resource type="Texture2D" uid="uid://bbig72wdjxvsy" path="res://assets/textures/hamster_low_initialShadingGroup_Normal.png" id="6_ysnnh"]
 [ext_resource type="Texture2D" uid="uid://dcu278755ubp1" path="res://assets/textures/hamster_low_initialShadingGroup_Roughness.png" id="7_7awx4"]
@@ -66,11 +66,27 @@ roughness_texture = ExtResource("7_7awx4")
 normal_enabled = true
 normal_texture = ExtResource("6_ysnnh")
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e4m52"]
+transparency = 1
+blend_mode = 4
+albedo_color = Color(1, 0.403922, 0.929412, 0.705882)
+metallic = 1.0
+metallic_specular = 1.0
+roughness = 0.0
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_totmp"]
 albedo_texture = ExtResource("8_lu6h2")
 roughness_texture = ExtResource("7_7awx4")
 normal_enabled = true
 normal_texture = ExtResource("6_ysnnh")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_epwsf"]
+transparency = 1
+blend_mode = 4
+albedo_color = Color(1, 0.523171, 0, 0.705882)
+metallic = 1.0
+metallic_specular = 1.0
+roughness = 0.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bf2c5"]
 albedo_texture = ExtResource("9_73q4l")
@@ -78,11 +94,27 @@ roughness_texture = ExtResource("7_7awx4")
 normal_enabled = true
 normal_texture = ExtResource("6_ysnnh")
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eyn7g"]
+transparency = 1
+blend_mode = 4
+albedo_color = Color(0.396078, 0.968627, 1, 0.705882)
+metallic = 1.0
+metallic_specular = 1.0
+roughness = 0.0
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uc1cd"]
 albedo_texture = ExtResource("10_0efno")
 roughness_texture = ExtResource("7_7awx4")
 normal_enabled = true
 normal_texture = ExtResource("6_ysnnh")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t3tbl"]
+transparency = 1
+blend_mode = 4
+albedo_color = Color(0.556863, 1, 0.2, 0.705882)
+metallic = 1.0
+metallic_specular = 1.0
+roughness = 0.0
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kfo4w"]
 size = Vector3(2855.14, 1, 3162.87)
@@ -140,12 +172,14 @@ script = ExtResource("3_wrvt7")
 [node name="Player" parent="." instance=ExtResource("3_3koh1")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 6.69792, 2.15169, 13.1141)
 material = SubResource("StandardMaterial3D_soj2n")
+ball_material = SubResource("StandardMaterial3D_e4m52")
 rolling_force = 11
 jumping_force = 8.0
 
 [node name="Player2" parent="." instance=ExtResource("3_3koh1")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -7.00689, 2.15169, 13.04)
 material = SubResource("StandardMaterial3D_totmp")
+ball_material = SubResource("StandardMaterial3D_epwsf")
 id = 1
 rolling_force = 11
 jumping_force = 8.0
@@ -153,6 +187,7 @@ jumping_force = 8.0
 [node name="Player3" parent="." instance=ExtResource("3_3koh1")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -6.7798, 2.15169, -0.826133)
 material = SubResource("StandardMaterial3D_bf2c5")
+ball_material = SubResource("StandardMaterial3D_eyn7g")
 id = 2
 rolling_force = 11
 jumping_force = 8.0
@@ -160,6 +195,7 @@ jumping_force = 8.0
 [node name="Player4" parent="." instance=ExtResource("3_3koh1")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 6.74703, 2.15169, -0.631619)
 material = SubResource("StandardMaterial3D_uc1cd")
+ball_material = SubResource("StandardMaterial3D_t3tbl")
 id = 3
 rolling_force = 11
 jumping_force = 8.0
