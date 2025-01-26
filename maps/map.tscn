@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://cabq2bupdujyv" path="res://objects/timer.tscn" id="2_5feha"]
 [ext_resource type="PackedScene" uid="uid://d4nnc7sjnxci2" path="res://objects/player/player.tscn" id="3_3koh1"]
 [ext_resource type="Script" path="res://scripts/game_manager.gd" id="3_wrvt7"]
-[ext_resource type="PackedScene" uid="uid://c562nfghl3e7s" path="res://objects/round_over_screen.tscn" id="3_y0db7"]
+[ext_resource type="PackedScene" path="res://objects/round_over_screen.tscn" id="3_y0db7"]
 [ext_resource type="Texture2D" uid="uid://50gqvevjmk65" path="res://assets/textures/hamster_low_initialShadingGroup_BaseColor.png" id="5_480rx"]
 [ext_resource type="Texture2D" uid="uid://bbig72wdjxvsy" path="res://assets/textures/hamster_low_initialShadingGroup_Normal.png" id="6_ysnnh"]
 [ext_resource type="Texture2D" uid="uid://dcu278755ubp1" path="res://assets/textures/hamster_low_initialShadingGroup_Roughness.png" id="7_7awx4"]
@@ -17,18 +17,31 @@
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_6vf8p"]
 sky_top_color = Color(0.493412, 0.455553, 0.905353, 1)
-sky_horizon_color = Color(0.734983, 0.428068, 0.81892, 1)
-ground_bottom_color = Color(0.297128, 0.0688453, 0.224533, 1)
 ground_horizon_color = Color(0.876015, 0.518156, 0.744013, 1)
 
 [sub_resource type="Sky" id="Sky_dviwu"]
 sky_material = SubResource("ProceduralSkyMaterial_6vf8p")
 
 [sub_resource type="Environment" id="Environment_0ycbg"]
-background_mode = 2
+background_mode = 1
+background_color = Color(0.913074, 0.29864, 0.479657, 1)
 sky = SubResource("Sky_dviwu")
 ambient_light_source = 3
 reflected_light_source = 2
+tonemap_white = 3.0
+ssil_radius = 9.6
+ssil_intensity = 16.0
+fog_enabled = true
+fog_mode = 1
+fog_light_color = Color(0.913725, 0.298039, 0.478431, 1)
+fog_density = 1.0
+fog_height = -5.0
+fog_height_density = 0.5
+fog_depth_curve = 1.86606
+adjustment_enabled = true
+adjustment_brightness = 0.8
+adjustment_contrast = 1.3
+adjustment_saturation = 1.25
 
 [sub_resource type="GDScript" id="GDScript_bg0ln"]
 resource_name = "add_ui_to_bubbles"
@@ -85,10 +98,10 @@ radius = 0.0426093
 environment = SubResource("Environment_0ycbg")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(-1, -5.96222e-08, 6.3937e-08, 0, 0.731354, 0.681998, -8.74228e-08, 0.681998, -0.731354, 0, 35.213, -36.74)
+transform = Transform3D(-1, -5.96222e-08, 6.3937e-08, 0, 0.731354, 0.681998, -8.74228e-08, 0.681998, -0.731354, 0, 15.175, -14.27)
 projection = 1
 fov = 79.9198
-size = 21.34
+size = 29.41
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 15.6929, 13.7691, -8.48451)
@@ -119,6 +132,13 @@ material = SubResource("StandardMaterial3D_soj2n")
 rolling_force = 11
 jumping_force = 8.0
 
+[node name="Player5" parent="." instance=ExtResource("3_3koh1")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 6.0066, -2.92172, 7.38606)
+visible = false
+material = SubResource("StandardMaterial3D_soj2n")
+rolling_force = 11
+jumping_force = 8.0
+
 [node name="Player2" parent="." instance=ExtResource("3_3koh1")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -7.00689, 2.15169, 13.04)
 material = SubResource("StandardMaterial3D_totmp")
@@ -143,8 +163,6 @@ jumping_force = 8.0
 [node name="Spawner" parent="." node_paths=PackedStringArray("spawn_parent") instance=ExtResource("8_00ss8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0559368, -1.59514, 4.37156)
 spawn_parent = NodePath("SpawnedBubbles")
-miner_chance = 0.1
-floating_chance = 0.2
 
 [node name="SpawnedBubbles" type="Node3D" parent="Spawner"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.211, 0)
@@ -174,6 +192,6 @@ transform = Transform3D(-31.7815, 60.5587, -24.2541, 64.9536, 26.8723, -18.0164,
 transform = Transform3D(57.1385, -13.9688, -42.4939, 14.1786, 71.0371, -4.2867, 42.4244, -4.92756, 58.6649, 8.0835, -15.6764, 15.232)
 
 [node name="cerca" parent="." instance=ExtResource("14_ydnii")]
-transform = Transform3D(-11.5463, 0, 226.441, 0, 226.735, 0, -226.441, 0, -11.5463, 18.4054, -2.06342, 8.30494)
+transform = Transform3D(-11.5463, 0, 226.441, 0, 226.735, 0, -226.441, 0, -11.5463, 12.5087, -3.86976, 8.30494)
 
 [connection signal="body_entered" from="DeathArea" to="GameManager" method="_on_death_area_body_entered"]

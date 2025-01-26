@@ -25,6 +25,8 @@ func _on_body_entered(body :Node3D):
 		rb.gravity_scale = 0
 		rb.linear_velocity = Vector3(rb.linear_velocity.x, 0, rb.linear_velocity.z)
 		
+		$ShadowMesh.queue_free()
+		
 		$PointsTimer.start()
 		$BubbleTimer.start()
 		return
