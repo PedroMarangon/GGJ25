@@ -1,6 +1,7 @@
 [gd_scene load_steps=25 format=3 uid="uid://b6ihhbt2rufpe"]
 
 [ext_resource type="PackedScene" uid="uid://cabq2bupdujyv" path="res://objects/timer.tscn" id="2_5feha"]
+[ext_resource type="PackedScene" uid="uid://3l8v2hrwv2wy" path="res://objects/leaderboard.tscn" id="2_pt8oo"]
 [ext_resource type="PackedScene" uid="uid://d4nnc7sjnxci2" path="res://objects/player/player.tscn" id="3_3koh1"]
 [ext_resource type="Script" path="res://scripts/game_manager.gd" id="3_wrvt7"]
 [ext_resource type="PackedScene" uid="uid://df17ft06qk6h7" path="res://objects/round_over_screen.tscn" id="3_y0db7"]
@@ -115,6 +116,8 @@ offset_right = -540.265
 offset_bottom = -609.0
 horizontal_alignment = 1
 remaining_time_seconds = 120
+
+[node name="Leaderboard" parent="CanvasLayer" instance=ExtResource("2_pt8oo")]
 
 [node name="RoundOverScreen" parent="CanvasLayer" instance=ExtResource("3_y0db7")]
 unique_name_in_owner = true
