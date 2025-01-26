@@ -1,12 +1,18 @@
-[gd_scene load_steps=9 format=3 uid="uid://3l8v2hrwv2wy"]
+[gd_scene load_steps=11 format=3 uid="uid://3l8v2hrwv2wy"]
 
 [ext_resource type="Script" path="res://objects/leaderboard.gd" id="1_1dl71"]
+[ext_resource type="FontFile" uid="uid://c3b4paoav3dpt" path="res://assets/fonts/BubblegumSans-Regular.ttf" id="2_e3144"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6dep8"]
+bg_color = Color(0, 0, 0, 0.792157)
 corner_radius_top_left = 20
 corner_radius_top_right = 20
 corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
+
+[sub_resource type="LabelSettings" id="LabelSettings_3btej"]
+font = ExtResource("2_e3144")
+font_size = 25
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8k81i"]
 bg_color = Color(0.203922, 0.203922, 0.203922, 1)
@@ -16,60 +22,77 @@ corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 
 [sub_resource type="LabelSettings" id="LabelSettings_7q0jr"]
-shadow_size = 15
+font = ExtResource("2_e3144")
+font_size = 36
+shadow_size = 36
 shadow_color = Color(0.94902, 0.25098, 1, 0)
 
 [sub_resource type="LabelSettings" id="LabelSettings_yc6pw"]
+font = ExtResource("2_e3144")
+font_size = 36
 shadow_size = 0
 shadow_color = Color(0.890196, 0.0901961, 0.32549, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_xtscc"]
+font = ExtResource("2_e3144")
+font_size = 36
 shadow_size = 0
 shadow_color = Color(0.890196, 0.0901961, 0.32549, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_qwihk"]
+font = ExtResource("2_e3144")
+font_size = 36
 shadow_size = 0
 shadow_color = Color(0.890196, 0.0901961, 0.32549, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_ioqsg"]
+font = ExtResource("2_e3144")
+font_size = 36
 shadow_size = 0
 shadow_color = Color(0.890196, 0.0901961, 0.32549, 1)
 
 [node name="Leaderboard" type="Control"]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_right = -930.0
-offset_bottom = -504.0
+anchor_left = 0.178
+anchor_top = 0.208
+anchor_right = 0.178
+anchor_bottom = 0.208
+offset_left = -205.056
+offset_top = -134.784
+offset_right = 203.944
+offset_bottom = 135.216
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_1dl71")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.096
-anchor_top = 0.111
-anchor_right = 0.096
-anchor_bottom = 0.111
-offset_left = -110.592
-offset_top = -71.928
-offset_right = 111.408
-offset_bottom = 72.072
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -204.5
+offset_top = -135.0
+offset_right = 204.5
+offset_bottom = 101.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_6dep8")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
-layout_mode = 0
-offset_left = 7.0
-offset_right = 214.0
-offset_bottom = 144.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.032
+anchor_right = 0.964
+anchor_bottom = 1.0
+offset_left = -0.104001
+offset_right = -0.00801086
 
 [node name="Label" type="Label" parent="Panel/VBoxContainer"]
 layout_mode = 2
-text = "Leaderboard"
+text = "Bubble Points Leaderboard ༼ つ ◕_◕ ༽つ"
+label_settings = SubResource("LabelSettings_3btej")
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -80,64 +103,84 @@ layout_mode = 2
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_8k81i")
-text = " Bubble Points Player 1: 0"
+text = " Player 1: 0"
 label_settings = SubResource("LabelSettings_7q0jr")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="pos2" type="Label" parent="Panel/VBoxContainer/referenceVbox"]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_8k81i")
-text = " Bubble Points Player 2: 0"
+text = " Player 2: 0"
 label_settings = SubResource("LabelSettings_7q0jr")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="pos3" type="Label" parent="Panel/VBoxContainer/referenceVbox"]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_8k81i")
-text = " Bubble Points Player 3: 0"
+text = " Player 3: 0"
 label_settings = SubResource("LabelSettings_7q0jr")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="pos4" type="Label" parent="Panel/VBoxContainer/referenceVbox"]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_8k81i")
-text = " Bubble Points Player 4: 0"
+text = " Player 4: 0"
 label_settings = SubResource("LabelSettings_7q0jr")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="VBoxContainer2" type="Control" parent="Panel/VBoxContainer"]
 layout_mode = 2
 
 [node name="Player1" type="Label" parent="Panel/VBoxContainer/VBoxContainer2"]
 layout_mode = 2
-offset_right = 207.0
-offset_bottom = 23.0
+offset_left = 0.0159912
+offset_right = 381.016
+offset_bottom = 43.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_8k81i")
-text = " Bubble Points Player 1: 0"
+text = "  Player 1: 0"
 label_settings = SubResource("LabelSettings_yc6pw")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Player2" type="Label" parent="Panel/VBoxContainer/VBoxContainer2"]
 layout_mode = 2
-offset_top = 27.0
-offset_right = 207.0
-offset_bottom = 50.0
+offset_left = 0.0159912
+offset_top = 47.0
+offset_right = 381.016
+offset_bottom = 90.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_8k81i")
-text = " Bubble Points Player 2: 0"
+text = "  Player 2: 0"
 label_settings = SubResource("LabelSettings_xtscc")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Player3" type="Label" parent="Panel/VBoxContainer/VBoxContainer2"]
 layout_mode = 2
-offset_top = 54.0
-offset_right = 207.0
-offset_bottom = 77.0
+offset_left = 0.0159912
+offset_top = 97.0
+offset_right = 381.016
+offset_bottom = 140.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_8k81i")
-text = " Bubble Points Player 3: 0"
+text = "  Player 3: 0"
 label_settings = SubResource("LabelSettings_qwihk")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Player4" type="Label" parent="Panel/VBoxContainer/VBoxContainer2"]
 layout_mode = 2
-offset_top = 81.0
-offset_right = 207.0
-offset_bottom = 104.0
+offset_left = 0.0159912
+offset_top = 144.0
+offset_right = 381.016
+offset_bottom = 187.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_8k81i")
-text = " Bubble Points Player 4: 0"
+text = "  Player 4: 0"
 label_settings = SubResource("LabelSettings_ioqsg")
+horizontal_alignment = 1
+vertical_alignment = 1

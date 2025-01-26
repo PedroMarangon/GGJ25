@@ -32,4 +32,4 @@ func _update_leaderboard(delta):
 			referenceLabels[player_id].label_settings.shadow_size = lerp(referenceLabels[player_id].label_settings.shadow_size, 22, 0.1)
 		else:
 			referenceLabels[player_id].label_settings.shadow_size = lerp(referenceLabels[player_id].label_settings.shadow_size, 0, 0.2)
-		referenceLabels[player_id].text = "Bubble Points Player %d: %d" % [player_id + 1, player_score]
+		referenceLabels[player_id].text = "Player %d: %d" % [player_id + 1, player_score]
