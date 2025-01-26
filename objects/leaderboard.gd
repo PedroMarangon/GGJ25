@@ -28,8 +28,8 @@ func _update_leaderboard(delta):
 		
 		referenceLabels[player_id].position = referenceLabels[player_id].position.lerp(referenceVboxPositions[player_rank], delta*3)
 		# If it's a promotion!
-		if referenceLabels[player_id].position.distance_to(referenceVboxPositions[player_rank]) > 1 and referenceLabels[player_id].position > referenceVboxPositions[player_rank]:
-			referenceLabels[player_id].label_settings.shadow_size = lerp(referenceLabels[player_id].label_settings.shadow_size, 22, 0.1)
+		if referenceLabels[player_id].position.distance_to(referenceVboxPositions[player_rank]) > 1 and referenceLabels[player_id].position.y > referenceVboxPositions[player_rank].y:
+			referenceLabels[player_id].label_settings.shadow_size = lerp(referenceLabels[player_id].label_settings.shadow_size, 30, 0.2)
 		else:
 			referenceLabels[player_id].label_settings.shadow_size = lerp(referenceLabels[player_id].label_settings.shadow_size, 0, 0.2)
 		referenceLabels[player_id].text = "Player %d: %d" % [player_id + 1, player_score]
