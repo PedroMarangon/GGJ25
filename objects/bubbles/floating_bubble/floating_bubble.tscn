@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://ynlsrescgkr6"]
+[gd_scene load_steps=8 format=3 uid="uid://ynlsrescgkr6"]
 
 [ext_resource type="Script" path="res://objects/bubbles/floating_bubble/floating_bubble.gd" id="1_d78w3"]
 
@@ -11,19 +11,29 @@ height = 2.4
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5fhw0"]
 transparency = 1
-albedo_color = Color(0.6024, 0.72, 0.0144, 0.466667)
+albedo_color = Color(0, 1, 0.0166667, 0.466667)
+metallic = 1.0
+metallic_specular = 1.0
+roughness = 0.13
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_brr6d"]
+transparency = 1
+albedo_color = Color(1, 1, 1, 0.466667)
+metallic = 1.0
+metallic_specular = 1.0
+roughness = 0.13
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_rdu0k"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m1dn1"]
 transparency = 1
-albedo_color = Color(0, 0, 0, 0.784314)
+albedo_color = Color(0, 0, 0, 0.470588)
 
 [node name="FloatingBubble" type="Area3D" groups=["FloatingBubble"]]
 script = ExtResource("1_d78w3")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 0)
 shape = SubResource("SphereShape3D_210nn")
 
 [node name="MainMesh" type="MeshInstance3D" parent="CollisionShape3D"]
@@ -31,13 +41,19 @@ mesh = SubResource("SphereMesh_j0ro1")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_5fhw0")
 
+[node name="MainMesh2" type="MeshInstance3D" parent="CollisionShape3D/MainMesh"]
+transform = Transform3D(0.945, 0, 0, 0, 0.945, 0, 0, 0, 0.945, 0, 0, 0)
+mesh = SubResource("SphereMesh_j0ro1")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_brr6d")
+
 [node name="PointsTimer" type="Timer" parent="."]
 
 [node name="BubbleTimer" type="Timer" parent="."]
 wait_time = 7.0
 
 [node name="ShadowMesh" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.8, 0, 0, 0, 0.009, 0, 0, 0, 0.8, 0, 0, 0)
+transform = Transform3D(2.5, 0, 0, 0, 0.028, 0, 0, 0, 2.5, 0, 0, 0)
 mesh = SubResource("CylinderMesh_rdu0k")
 surface_material_override/0 = SubResource("StandardMaterial3D_m1dn1")
 

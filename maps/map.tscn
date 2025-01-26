@@ -1,10 +1,10 @@
-[gd_scene load_steps=26 format=3 uid="uid://b6ihhbt2rufpe"]
+[gd_scene load_steps=27 format=3 uid="uid://b6ihhbt2rufpe"]
 
 [ext_resource type="PackedScene" uid="uid://cabq2bupdujyv" path="res://objects/timer.tscn" id="2_5feha"]
 [ext_resource type="PackedScene" uid="uid://3l8v2hrwv2wy" path="res://objects/leaderboard.tscn" id="2_pt8oo"]
 [ext_resource type="PackedScene" uid="uid://d4nnc7sjnxci2" path="res://objects/player/player.tscn" id="3_3koh1"]
 [ext_resource type="Script" path="res://scripts/game_manager.gd" id="3_wrvt7"]
-[ext_resource type="PackedScene" uid="uid://c562nfghl3e7s" path="res://objects/round_over_screen.tscn" id="3_y0db7"]
+[ext_resource type="PackedScene" uid="uid://df17ft06qk6h7" path="res://objects/round_over_screen.tscn" id="3_y0db7"]
 [ext_resource type="Texture2D" uid="uid://50gqvevjmk65" path="res://assets/textures/hamster_low_initialShadingGroup_BaseColor.png" id="5_480rx"]
 [ext_resource type="Texture2D" uid="uid://bbig72wdjxvsy" path="res://assets/textures/hamster_low_initialShadingGroup_Normal.png" id="6_ysnnh"]
 [ext_resource type="Texture2D" uid="uid://dcu278755ubp1" path="res://assets/textures/hamster_low_initialShadingGroup_Roughness.png" id="7_7awx4"]
@@ -27,7 +27,8 @@ sky_material = SubResource("ProceduralSkyMaterial_6vf8p")
 background_mode = 1
 background_color = Color(0.913074, 0.29864, 0.479657, 1)
 sky = SubResource("Sky_dviwu")
-ambient_light_source = 3
+ambient_light_source = 2
+ambient_light_color = Color(0.886275, 0.0941176, 0.32549, 1)
 reflected_light_source = 2
 tonemap_white = 3.0
 ssil_radius = 9.6
@@ -90,6 +91,8 @@ size = Vector3(2855.14, 1, 3162.87)
 height = 0.0115629
 radius = 0.0426093
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_ln3at"]
+
 [node name="Map" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -132,13 +135,6 @@ script = ExtResource("3_wrvt7")
 
 [node name="Player" parent="." instance=ExtResource("3_3koh1")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 6.69792, 2.15169, 13.1141)
-material = SubResource("StandardMaterial3D_soj2n")
-rolling_force = 11
-jumping_force = 8.0
-
-[node name="Player5" parent="." instance=ExtResource("3_3koh1")]
-transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 6.0066, -2.92172, 7.38606)
-visible = false
 material = SubResource("StandardMaterial3D_soj2n")
 rolling_force = 11
 jumping_force = 8.0
@@ -197,5 +193,28 @@ transform = Transform3D(57.1385, -13.9688, -42.4939, 14.1786, 71.0371, -4.2867, 
 
 [node name="cerca" parent="." instance=ExtResource("14_ydnii")]
 transform = Transform3D(-11.5463, 0, 226.441, 0, 226.735, 0, -226.441, 0, -11.5463, 12.5087, -3.86976, 8.30494)
+
+[node name="COLLISIONS" type="StaticBody3D" parent="."]
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="COLLISIONS"]
+transform = Transform3D(9.60322, 0, 0, 0, 100.518, 0, 0, 0, 65.3641, -27.1958, 6.385, 18.9373)
+shape = SubResource("BoxShape3D_ln3at")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="COLLISIONS"]
+transform = Transform3D(9.60322, 0, 0, 0, 100.518, 0, 0, 0, 65.3641, 27.196, 6.385, 18.937)
+shape = SubResource("BoxShape3D_ln3at")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="COLLISIONS"]
+transform = Transform3D(-4.1977e-07, 100.518, 0, -9.60322, -4.39377e-06, 0, 0, 0, 65.3641, 1.7662, 20.631, 10.225)
+shape = SubResource("BoxShape3D_ln3at")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="COLLISIONS"]
+transform = Transform3D(-4.1977e-07, 0, 52.4215, 0, 100.518, 0, -9.60322, 0, -2.29142e-06, 0, 6.385, 27.5303)
+shape = SubResource("BoxShape3D_ln3at")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="COLLISIONS"]
+transform = Transform3D(-4.1977e-07, 0, 52.4215, 0, 100.518, 0, -9.60322, 0, -2.29142e-06, -0.317146, 0.77858, -16.8345)
+shape = SubResource("BoxShape3D_ln3at")
 
 [connection signal="body_entered" from="DeathArea" to="GameManager" method="_on_death_area_body_entered"]

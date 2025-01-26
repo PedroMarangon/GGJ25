@@ -2,11 +2,18 @@ extends Area3D
 
 @export var current_player :Player
 
+var sin_counter :float = 0
 
 func _physics_process(delta):
 	if current_player == null:
+		sin_counter += delta
+		$CollisionShape3D/MainMesh.position.y = sin(sin_counter) * 0.2
 		return
+	
 	$CollisionShape3D.global_position = current_player.rigid_body_3d.global_position
+	
+	
+	
 
 func _on_body_entered(body :Node3D):
 	if not body.is_in_group("PLAYER"):
@@ -26,6 +33,17 @@ func _on_body_entered(body :Node3D):
 		rb.linear_velocity = Vector3(rb.linear_velocity.x, 0, rb.linear_velocity.z)
 		
 		$ShadowMesh.queue_free()
+		
+		
+		var land_tween = get_tree().create_tween()
+		const LAND_SCALE = Vector3(1.405, 0.955, 1.405)
+		
+		land_tween.tween_property($CollisionShape3D/MainMesh, "scale", LAND_SCALE, 0.1)
+		land_tween.tween_property($CollisionShape3D/MainMesh, "scale", Vector3.ONE, 0.1)
+		
+		
+		
+		
 		
 		$PointsTimer.start()
 		$BubbleTimer.start()
