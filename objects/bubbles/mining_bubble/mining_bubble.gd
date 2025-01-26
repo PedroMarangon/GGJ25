@@ -25,7 +25,7 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 	
 	
 	health -= 1
-	AudioManager.play(["res://sounds/miner_jump.ogg"], 0.5, -10)
+	AudioManager.play(["res://sounds/miner_jump.ogg"], 0.5, 0)
 	body.linear_velocity.y = 24
 	body.linear_velocity.x = randf_range(-8, 8)
 	body.linear_velocity.z = randf_range(-8, 8)

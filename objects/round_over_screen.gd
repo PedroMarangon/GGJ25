@@ -1,11 +1,17 @@
 extends Control
 
+@export var player_colors : Array[Color]
+
 func _ready() -> void:
 	visible = false
 	
 func activate():
-	visible = true
-	var leaderboard = BubblePoints.get_ranked_points()
-	for value in leaderboard:
-		var player_points = leaderboard[value]
-		$Leaderboard/Label.text += "Player %d: %d \n" % [player_points[0] + 1, player_points[1]]
+	var player_id = BubblePoints.get_ranked_points()[0][0]
+	visible = true	
+	$FimDeRodada3.modulate = Color(1, 1, 1, 0)
+	$FimDeRodada2.text = "Player %s venceu!" % [player_id + 1]
+	$FimDeRodada2.modulate = player_colors[player_id]
+	
+func activate_x_to_continue():
+	var tween : Tween = self.create_tween()
+	await tween.tween_property($FimDeRodada3, "modulate", Color.WHITE, 0.3)

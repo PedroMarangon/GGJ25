@@ -1,24 +1,25 @@
-[gd_scene load_steps=7 format=3 uid="uid://df17ft06qk6h7"]
+[gd_scene load_steps=6 format=3 uid="uid://c562nfghl3e7s"]
 
 [ext_resource type="Script" path="res://objects/round_over_screen.gd" id="1_0l006"]
 [ext_resource type="FontFile" uid="uid://c3b4paoav3dpt" path="res://assets/fonts/BubblegumSans-Regular.ttf" id="2_r2mfj"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_y4sud"]
-font_size = 50
+font_size = 100
 outline_size = 22
 outline_color = Color(0, 0, 0, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2p1aa"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
+[sub_resource type="LabelSettings" id="LabelSettings_wnbxw"]
+font_size = 65
+outline_size = 22
+outline_color = Color(0, 0, 0, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_npwxb"]
-bg_color = Color(0, 0, 0, 0.490196)
-
-[sub_resource type="LabelSettings" id="LabelSettings_gnvuo"]
-line_spacing = 100.0
-font_size = 40
+[sub_resource type="LabelSettings" id="LabelSettings_g3kek"]
+font_size = 37
+outline_size = 22
+outline_color = Color(0, 0, 0, 1)
 
 [node name="RoundOverScreen" type="Control"]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -26,18 +27,20 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_0l006")
+player_colors = Array[Color]([Color(1, 0.403922, 0.929412, 1), Color(1, 0.521569, 0, 1), Color(0.396078, 0.968627, 1, 1), Color(0.556863, 1, 0.2, 1)])
 
 [node name="FimDeRodada" type="Label" parent="."]
+process_mode = 3
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.497
 anchor_top = 0.5
 anchor_right = 0.497
 anchor_bottom = 0.5
-offset_left = -179.544
-offset_top = -324.0
-offset_right = 180.456
-offset_bottom = -212.0
+offset_left = -272.544
+offset_top = -61.0
+offset_right = 282.456
+offset_bottom = 57.0
 grow_horizontal = 2
 theme_override_fonts/font = ExtResource("2_r2mfj")
 text = "Fim de rodada!"
@@ -45,34 +48,40 @@ label_settings = SubResource("LabelSettings_y4sud")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Leaderboard" type="Panel" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 343.0
-offset_top = 59.0
-offset_right = -339.0
-offset_bottom = -47.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_2p1aa")
-
-[node name="Label" type="Label" parent="Leaderboard"]
+[node name="FimDeRodada2" type="Label" parent="."]
+process_mode = 3
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.5
+anchor_left = 0.497
 anchor_top = 0.5
-anchor_right = 0.5
+anchor_right = 0.497
 anchor_bottom = 0.5
-offset_left = -185.0
-offset_top = -218.0
-offset_right = 178.0
-offset_bottom = 236.0
+offset_left = -270.544
+offset_top = 11.0
+offset_right = 284.456
+offset_bottom = 129.0
 grow_horizontal = 2
-grow_vertical = 2
 theme_override_fonts/font = ExtResource("2_r2mfj")
-theme_override_styles/normal = SubResource("StyleBoxFlat_npwxb")
-label_settings = SubResource("LabelSettings_gnvuo")
+text = "Player X venceu!"
+label_settings = SubResource("LabelSettings_wnbxw")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FimDeRodada3" type="Label" parent="."]
+process_mode = 3
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.497
+anchor_top = 0.5
+anchor_right = 0.497
+anchor_bottom = 0.5
+offset_left = -256.544
+offset_top = 220.0
+offset_right = 298.456
+offset_bottom = 338.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_r2mfj")
+text = "Aperte \"X\" para jogar novamente"
+label_settings = SubResource("LabelSettings_g3kek")
 horizontal_alignment = 1
 vertical_alignment = 1
