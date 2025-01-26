@@ -10,6 +10,9 @@ class_name Player
 
 @onready var rigid_body_3d :RigidBody3D = $RigidBody3D
 
+# Qual foi o último player que bateu neste player atual, se este player atual morrer, os pontos desse aqui vai pra o id dessa variável
+var last_player_collided_id = null
+
 func _ready():
 	$HamsterParent.scale = Vector3.ONE * 0.5
 	%Score.scale = Vector3.ONE * 1.5
@@ -53,3 +56,12 @@ func update_player_score():
 	var number = BubblePoints.get_points_by_id(id)
 	var padded = "%03d" % number
 	%Score.text = "P" + str(id + 1) + " " + "BP: " + str(padded)
+
+func _on_rigid_body_3d_body_entered(body: Node) -> void:
+	if body.get_parent().is_in_group("PLAYER"):
+		print("Player %d marked Player %d" % [body.get_parent().id+1, id+1])
+		last_player_collided_id = body.get_parent().id
+
+func _on_clear_last_player_collided_timeout() -> void:
+	last_player_collided_id = null
+	$ClearLastPlayerCollided.start()

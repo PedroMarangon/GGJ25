@@ -21,7 +21,7 @@ var p4_label :Label
 
 @export var ground_bubble_value :int = 1
 @export var floating_bubble_value :int = 5
-@export var miner_bubble_value :int = 50
+@export var miner_bubble_value :int = 40
 
 @export var player1_bubbles :int = 0
 @export var player2_bubbles :int = 0
@@ -77,18 +77,51 @@ func reset_score():
 	player3_bubbles = 0
 	player4_bubbles = 0
 	
-func remove_bubble_points(bubble_penalty, player_id):
+func remove_bubble_points(bubble_penalty, player_id, rewarded_player):	
 	var penalty = 0
 	match bubble_penalty:
 		BubblePenalties.DEATH:
-			penalty = 10
+			# Se for o primeiro do rank que morreu a penalidade é maior para o primeiro
+			var firstRankDeath = get_ranked_points()[0][0] == player_id
+			if firstRankDeath:
+				penalty = 40
+			else:
+				penalty = 30
 			
-	match player_id:
-		0: player1_bubbles -= penalty
-		1: player2_bubbles -= penalty
-		2: player3_bubbles -= penalty
-		3: player4_bubbles -= penalty
-		
+			match player_id:
+				0:
+					penalty = penalty if (player1_bubbles - penalty) >= 0 else player1_bubbles
+					player1_bubbles -= penalty
+				1: 
+					penalty = penalty if (player2_bubbles - penalty) >= 0 else player2_bubbles
+					player2_bubbles -= penalty
+				2: 
+					penalty = penalty if (player3_bubbles - penalty) >= 0 else player3_bubbles
+					player3_bubbles -= penalty
+				3: 
+					penalty = penalty if (player4_bubbles - penalty) >= 0 else player4_bubbles
+					player4_bubbles -= penalty
+			
+			# Se o primeiro do rank foi o que morreu, divide os pontos deles entre os players
+			if firstRankDeath:
+				var penalty_divide = penalty/3
+				var players = [0, 1, 2, 3]
+				for i in players:
+					if i == player_id:
+						continue
+					else:
+						match i:
+							0: player1_bubbles += penalty_divide
+							1: player2_bubbles += penalty_divide
+							2: player3_bubbles += penalty_divide
+							3: player4_bubbles += penalty_divide
+			else:
+				match rewarded_player:
+					0: player1_bubbles += penalty
+					1: player2_bubbles += penalty
+					2: player3_bubbles += penalty
+					3: player4_bubbles += penalty
+			
 	player1_bubbles = clamp(player1_bubbles, 0, 99999999)
 	player2_bubbles = clamp(player2_bubbles, 0, 99999999)
 	player3_bubbles = clamp(player3_bubbles, 0, 99999999)

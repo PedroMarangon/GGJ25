@@ -35,9 +35,9 @@ ssil_radius = 9.6
 ssil_intensity = 16.0
 fog_enabled = true
 fog_mode = 1
-fog_light_color = Color(0.913725, 0.298039, 0.478431, 1)
+fog_light_color = Color(0.913725, 0.362905, 0.536455, 1)
 fog_density = 1.0
-fog_height = -5.0
+fog_height = -6.0
 fog_height_density = 0.5
 fog_depth_curve = 1.86606
 adjustment_enabled = true
@@ -174,7 +174,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.211, 0)
 [node name="DeathArea" type="Area3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="DeathArea"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.14204, -17.5682, -0.76073)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.14204, -17.3573, -0.76073)
 shape = SubResource("BoxShape3D_kfo4w")
 
 [node name="arena" parent="." instance=ExtResource("12_ukuni")]
@@ -214,7 +214,7 @@ transform = Transform3D(-4.1977e-07, 100.518, 0, -9.60322, -4.39377e-06, 0, 0, 0
 shape = SubResource("BoxShape3D_ln3at")
 
 [node name="CollisionShape3D4" type="CollisionShape3D" parent="COLLISIONS"]
-transform = Transform3D(-4.1977e-07, 0, 52.4215, 0, 100.518, 0, -9.60322, 0, -2.29142e-06, 0, 6.385, 27.5303)
+transform = Transform3D(-4.1977e-07, 0, 52.4215, 0, 100.518, 0, -9.60322, 0, -2.29142e-06, 0, 6.385, 37.8025)
 shape = SubResource("BoxShape3D_ln3at")
 
 [node name="CollisionShape3D5" type="CollisionShape3D" parent="COLLISIONS"]
