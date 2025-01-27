@@ -1,5 +1,6 @@
 extends Node
 
+var skip_logo = false
 
 func count_nodes_in_group(parent: Node, group_name: String) -> int:
 	var count = 0

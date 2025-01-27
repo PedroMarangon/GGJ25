@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://c3v8n1mti47ta"
+path="res://.godot/imported/jogo do hamster.ogg-ba382c9c92e32148b9f5b04ffb1ef24e.oggvorbisstr"
+
+[deps]
+
+source_file="res://sounds/jogo do hamster.ogg"
+dest_files=["res://.godot/imported/jogo do hamster.ogg-ba382c9c92e32148b9f5b04ffb1ef24e.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

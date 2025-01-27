@@ -1,5 +1,7 @@
-[gd_scene load_steps=31 format=3 uid="uid://b6ihhbt2rufpe"]
+[gd_scene load_steps=34 format=3 uid="uid://b6ihhbt2rufpe"]
 
+[ext_resource type="PackedScene" uid="uid://b3qummise4owp" path="res://objects/start_game_screen.tscn" id="1_e46cp"]
+[ext_resource type="PackedScene" path="res://objects/tutorial.tscn" id="1_l3ffl"]
 [ext_resource type="PackedScene" uid="uid://cabq2bupdujyv" path="res://objects/timer.tscn" id="2_5feha"]
 [ext_resource type="PackedScene" uid="uid://3l8v2hrwv2wy" path="res://objects/leaderboard.tscn" id="2_pt8oo"]
 [ext_resource type="PackedScene" uid="uid://d0q5sef545y74" path="res://objects/player/Player.tscn" id="3_3koh1"]
@@ -15,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://cfggwswrj0xbc" path="res://assets/models/arena/arena.fbx" id="12_ukuni"]
 [ext_resource type="PackedScene" uid="uid://0dpkcl0u6dq8" path="res://assets/models/arena/argolas.fbx" id="13_gtxr5"]
 [ext_resource type="PackedScene" uid="uid://13day140g86k" path="res://assets/models/arena/cerca.fbx" id="14_ydnii"]
+[ext_resource type="AudioStream" uid="uid://c3v8n1mti47ta" path="res://sounds/jogo do hamster.ogg" id="18_2lc4q"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_6vf8p"]
 sky_top_color = Color(0.493412, 0.455553, 0.905353, 1)
@@ -143,6 +146,19 @@ shadow_enabled = true
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 script = SubResource("GDScript_bg0ln")
 
+[node name="PanelContainer" parent="CanvasLayer" instance=ExtResource("1_l3ffl")]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -181.0
+offset_top = 29.0
+offset_right = -22.0
+offset_bottom = 251.0
+grow_horizontal = 0
+
+[node name="StartGameScreen" parent="CanvasLayer" instance=ExtResource("1_e46cp")]
+modulate = Color(1, 1, 1, 0)
+
 [node name="Timer" parent="CanvasLayer" instance=ExtResource("2_5feha")]
 unique_name_in_owner = true
 offset_left = 565.735
@@ -150,7 +166,7 @@ offset_top = 15.0
 offset_right = -540.265
 offset_bottom = -609.0
 horizontal_alignment = 1
-remaining_time_seconds = 100
+remaining_time_seconds = 150
 
 [node name="Leaderboard" parent="CanvasLayer" instance=ExtResource("2_pt8oo")]
 anchors_preset = 0
@@ -264,5 +280,12 @@ shape = SubResource("BoxShape3D_ln3at")
 [node name="CollisionShape3D5" type="CollisionShape3D" parent="COLLISIONS"]
 transform = Transform3D(-4.1977e-07, 0, 52.4215, 0, 100.518, 0, -9.60322, 0, -2.29142e-06, -0.317146, 0.77858, -16.8345)
 shape = SubResource("BoxShape3D_ln3at")
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+stream = ExtResource("18_2lc4q")
+volume_db = -16.668
+autoplay = true
+parameters/looping = true
 
 [connection signal="body_entered" from="DeathArea" to="GameManager" method="_on_death_area_body_entered"]

@@ -1,0 +1,53 @@
+[gd_scene load_steps=5 format=3 uid="uid://b3qummise4owp"]
+
+[ext_resource type="Script" path="res://objects/start_game_screen.gd" id="1_rvw1r"]
+[ext_resource type="FontFile" uid="uid://c3b4paoav3dpt" path="res://assets/fonts/BubblegumSans-Regular.ttf" id="2_of23h"]
+[ext_resource type="Texture2D" uid="uid://cdv3g3uae6sg2" path="res://assets/logo.png" id="2_psd6v"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_g3kek"]
+font_size = 37
+outline_size = 22
+outline_color = Color(0, 0, 0, 1)
+
+[node name="StartGameScreen" type="Control"]
+process_mode = 3
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rvw1r")
+
+[node name="FimDeRodada3" type="Label" parent="."]
+process_mode = 3
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.497
+anchor_top = 0.5
+anchor_right = 0.497
+anchor_bottom = 0.5
+offset_left = -258.544
+offset_top = 146.0
+offset_right = 296.456
+offset_bottom = 264.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_of23h")
+text = "Aperte \"X\" para jogar"
+label_settings = SubResource("LabelSettings_g3kek")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.507
+anchor_top = 0.517
+anchor_right = 0.507
+anchor_bottom = 0.517
+offset_left = -552.064
+offset_top = -223.016
+offset_right = 546.936
+offset_bottom = 74.984
+texture = ExtResource("2_psd6v")
